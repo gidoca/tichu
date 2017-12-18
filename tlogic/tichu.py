@@ -1,6 +1,6 @@
 #!/bin/python
 
-from tlogic.tcards import Color, Special, Card
+from tlogic.tcards import Color, Special, Card, dragon, phoenix, mahjong, dog
 
 
 def generate_deck():
@@ -9,10 +9,11 @@ def generate_deck():
         for i in range(2,15):
             print (i, color)
             deck.append (Card(color=color, height=i))
-    deck.append(Card(special=Special.dragon, height=17))
-    deck.append(Card(special=Special.phoenix, height=17))
-    deck.append(Card(special=Special.mahjong, height=1))
-    deck.append(Card(special=Special.dog, height=-2))
+
+    deck.append(dragon)
+    deck.append(phoenix)
+    deck.append(mahjong)
+    deck.append(dog)
 
     for i, card in enumerate(deck):
         print (i,card)
