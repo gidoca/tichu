@@ -1,0 +1,1 @@
+from tpatterns.straights import StraightRec
