@@ -5,6 +5,9 @@ from tlogic import Card
 
 
 
+# Haha, to much java programming
+# In python we could just have
+# a function. But not sure if this would be better
 class TPatternRecognizer(metaclass=abc.ABCMeta):
 
 

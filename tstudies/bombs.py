@@ -1,6 +1,8 @@
 import random as r
 
 
+# TODO: this is logic
+# -> replace by multiples rec.
 def find_bombs(cards):
     buffer = []
     out = []
