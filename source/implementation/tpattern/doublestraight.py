@@ -1,4 +1,4 @@
-from tpatterns.tpatternrecognizer import TPatternRecognizer
+from tpattern.tpatternrecognizer import TPatternRecognizer
 from tlogic import Card
 from collections import Counter
 
@@ -6,6 +6,8 @@ from typing import Set
 
 
 class DoubleStraightRec(TPatternRecognizer):
+
+    @classmethod
     def recognize(self, cards: Set[Card], phoenix=False):
 
         # sort carts by height
@@ -18,11 +20,16 @@ class DoubleStraightRec(TPatternRecognizer):
         by_height = Counter(map(lambda c: c.height, cards))
         by_height_minpair = [k for k, v in by_height.items() if v >= 2]
 
+
+
         # num_cards = len(sorted_cards)
 
         lengths = []
         i , j= 0,0
         maxidx = len(by_height_minpair)
+
+
+
         while (i < maxidx - 1):
             j = 0;
             while (i + j < maxidx-1):
@@ -36,7 +43,8 @@ class DoubleStraightRec(TPatternRecognizer):
                 else:
                     j += 1;
 
-            lengths.append(j+1);
+            if j>0:
+                lengths.append(j+1);
 
             i += j + 1
         return lengths

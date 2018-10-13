@@ -5,7 +5,7 @@ class Color(Enum):
     red = 1
     blue = 2
     green = 3
-    black = 4
+    karbon = 4
     def __str__(self):
         return self.name[0]
 
@@ -21,16 +21,22 @@ class Special(Enum):
 
 class Card:
     # TODO special and None color is the same property
-    def __init__(self, color=None, height=-1, special=None):
+    def __init__(self, color=None, rank=None, special=None):
         self.special = special
-        self.height = height
+        self.rank = rank
         self.color = color
 
     def __repr__(self):
         if self.special is not None:
             return str(self.special)
         else:
-            return str(self.color)+str(self.height)
+            return str(self.color)+str(self.rank)
+
+    def __eq__(self, other):
+        return self.__repr__() == other.__repr__()
+
+    def __hash__(self):
+        return self.__repr__().__hash__()
 
 
     @staticmethod
@@ -52,23 +58,30 @@ class Card:
                 return dog
             else:
                 color = mapcolor(str[0])
-                height = int(str[1])
-                return Card(color=color, height=height);
+                rank = int(str[1:])
+                return Card(color=color, rank=rank);
+
+    @staticmethod
+    def mstr(param: str):
+        cardstrings = param.split(' ')
+        cards = list(map(Card.from_string, cardstrings))
+        return cards
 
 
 def mapcolor(str: str):
     if str=='r':
         return Color.red;
     if str=='k': # Karbon
-        return Color.black
+        return Color.karbon
     if str == 'b':
         return Color.blue
     if str == 'g':
         return Color.green
 
 
-dragon = Card(special=Special.dragon, height=18)
-phoenix = Card(special=Special.phoenix, height=17)
-mahjong = Card(special=Special.mahjong, height=1)
-dog = Card(special=Special.dog, height=-2)
+dragon = Card(special=Special.dragon, rank=18)
+# That will be problematic when played onto a single card
+phoenix = Card(special=Special.phoenix, rank=17)
+mahjong = Card(special=Special.mahjong, rank=1)
+dog = Card(special=Special.dog, rank=-2)
 
