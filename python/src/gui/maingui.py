@@ -33,7 +33,7 @@ class TiQu(QMainWindow):
         file = self.menuBar.addMenu('&Gagi')
         file.addAction(exitAct)
 
-        cards = Card.mstr('g2 b3 k5')
+        cards = mstr('g2 b3 k5')
 
         qcardgrid = TCardGrid(cards)
         self.setCentralWidget(qcardgrid)

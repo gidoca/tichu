@@ -48,7 +48,7 @@ class TServerPlayer:
         self.stash.update(cards)
 
     def hasMajong(self):
-        return Card.from_string('ma') in self.hand
+        return tcard('ma') in self.hand
 
 
 class TCardTable:

@@ -4,15 +4,18 @@
 # now defaulting to 3 AI and one human player
 
 # there needs also to be a mechanism for outputing user messages
+import sys
 import time
 from enum import Enum
 from typing import List, Set, Dict
 
+print (sys.path)
+
 import tlogic
-from tgame.humanplayer import HumanPlayer
-from tgame.server import TCardTable, TEventList, TEvent
-from tgame.stupidai import StupidAI
-from tgame.tplayer import TPlayer
+from tplayer.humanplayer import HumanPlayer
+from tplayer.server import TCardTable, TEventList, TEvent
+from tplayer.stupidai import StupidAI
+from tplayer.tplayer import TPlayer
 from tlogic.tcards import Card, dog
 from tlogic.thelpers import generate_deck
 

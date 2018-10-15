@@ -54,10 +54,10 @@ def pr(num : int):
 if __name__ == '__main__':
 
     cards = [];
-    cards.append(list(map(Card.from_string, ['r4', 'g4', 'b4', 'r2', 'g2', 'k2'])))
-    cards.append(list(map(Card.from_string, ['r4', 'g4', 'b4', 'r2', 'g2' ])))
-    cards.append(list(map(Card.from_string, ['r4', 'g4', 'b4', 'r2', 'g2', 'k2', 'r3', 'k3', 'r5', 'g5', 'k5'])))
-    cards.append(list(map(Card.from_string, ['r4', 'g4', 'b4', 'r2', 'g2', 'k2', 'r3', 'k3', 'g5', 'k5', 'r8', 'g8', 'b8'])))
+    cards.append(list(map(tcard, ['r4', 'g4', 'b4', 'r2', 'g2', 'k2'])))
+    cards.append(list(map(tcard, ['r4', 'g4', 'b4', 'r2', 'g2'])))
+    cards.append(list(map(tcard, ['r4', 'g4', 'b4', 'r2', 'g2', 'k2', 'r3', 'k3', 'r5', 'g5', 'k5'])))
+    cards.append(list(map(tcard, ['r4', 'g4', 'b4', 'r2', 'g2', 'k2', 'r3', 'k3', 'g5', 'k5', 'r8', 'g8', 'b8'])))
 
     fhr = FullhouseRec()
     for cardset in cards:

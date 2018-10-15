@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 from enum import Enum, auto
 from typing import Set, Callable
 
-from tgame.server import TEvent
+from tplayer.server import TEvent
 from tlogic.tcards import Card
 
 

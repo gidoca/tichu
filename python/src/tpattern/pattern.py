@@ -1,4 +1,5 @@
 import abc
+from abc import abstractmethod
 
 from tlogic.tcards import Card
 from typing import Set, Collection
@@ -6,12 +7,8 @@ from typing import Set, Collection
 
 class TPattern(metaclass=abc.ABCMeta):
 
-    def __init__(self, cards: Collection[Card]):
-        self.cards = cards
+    # Todo: leave this to the subclasses
 
-    @abc.abstractclassmethod
-    def getCards(self) -> Set[Card]:
-        pass
 
     @abc.abstractmethod
     def find(self, cards, higher=True, exact=True):

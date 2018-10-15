@@ -28,4 +28,29 @@ Now what is important to know in order to justify the probability?
 
 
 
+## Complex Pattern Classes
+
+The idea is to pack all cards that can be used by a pattern into one pattern
+object and not multiple. For example looking for a pair in
+> r4 g4 b4 
+
+will return one pattern object that yields 3 possible pairs.
+Or for example if we are looking for a straight there is one more parameter
+since the length of a straight can vary:
+> maj r2 r3 b4 b5 g6 r6 b7
+
+will return a StraightPattern with 2 possibilities. Respectively there 
+are more if including partial straights. Straits could also yield a split
+info (build to independent straight).
+
+In general a pattern object should yield the following info:
+* Possible combinations for the pattern 
+* Is it possible to beat another pattern?
+* The cards potentially used by the pattern
+* Which cards are of value for the resp. pattern. 
+  For a straight a card that is available twice is of 
+  less value than a one that occurs only once
+* Should there be a class that collects all the patterns of one type?
+
+
 

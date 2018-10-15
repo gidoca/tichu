@@ -1,6 +1,6 @@
 from typing import Set
 
-from tlogic import Card
+from tlogic.tcards import Card
 from tpattern.multiples import MultiRec
 from tpattern.tpatternrecognizer import TPatternRecognizer
 

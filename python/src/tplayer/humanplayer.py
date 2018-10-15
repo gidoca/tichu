@@ -1,8 +1,8 @@
 import sys
 from typing import Set
 
-from tgame.server import TEvent
-from tgame.tplayer import TPlayer
+from tplayer.server import TEvent
+from tplayer.tplayer import TPlayer
 from tlogic.tcards import Card
 
 
@@ -32,7 +32,7 @@ class HumanPlayer(TPlayer):
                 if inp == "pass" or inp == "p":
                     cards = []
                 else:
-                    cards = Card.mstr(inp)
+                    cards = mstr(inp)
 
                 validpattern = cards_validator(cards, self.cards)
 

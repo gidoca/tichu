@@ -5,7 +5,6 @@ from tpattern.pattern import TPattern
 from tpattern.tpatternrecognizer import TPatternRecognizer, TPatternRecResult
 
 from typing import Set
-from collections import Counter
 
 
 class PassOrEmpty():
@@ -44,7 +43,7 @@ class TMulti(TPattern):
     def __gt__(self, other):
         if isinstance(other, TMulti):
             if other.numberof != self.numberof:
-                raise ValueError
+                raise ValueError('Multiple - Self: {} - Other: {}'.format(self.numberof, other.numberof))
             return self.rank > other.rank
         # Problem phoenix -> make a "TSingle" class?
         elif isinstance(other, PassOrEmpty):

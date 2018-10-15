@@ -2,27 +2,47 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce7a56db-efcd-49c7-a0f2-8f691e9fdae7" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/recognition.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/src/tlogic/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/python/tests/tpattern/test_multiples.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/tichu.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/tichu.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_studies.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlogic/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlogic/tcards.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tlogic/tichu.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tpattern/doublestraight.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tpattern/fullhouse.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tpattern/recresult.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tpattern/straights.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tpatterns/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tpatterns/multiples.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tpatterns/tpatternrecognizer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tstudies/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tstudies/bombs.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tstudies/doublestraight.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tstudies/fullhouse.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tstudies/straights.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/tichu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/doc/tichu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recognition.md" beforeDir="false" afterPath="$PROJECT_DIR$/recognition.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/implementation/gui/QTCard.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/src/gui/QTCard.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/implementation/gui/TCardGrid.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/src/gui/TCardGrid.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/implementation/gui/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/src/gui/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/implementation/gui/maingui.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/src/gui/maingui.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/implementation/run_studies.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/src/run_studies.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/implementation/tgame/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/tests/tpattern/test_straights.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/implementation/tgame/humanplayer.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/src/tplayer/humanplayer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/implementation/tgame/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/src/tplayer/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/implementation/tgame/stupidai.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/src/tplayer/stupidai.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/implementation/tgame/terminal.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/src/tplayer/terminal.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/implementation/tgame/tplayer.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/src/tplayer/tplayer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/implementation/tlogic/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/src/tpattern/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/implementation/tlogic/tcards.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/src/tlogic/tcards.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/implementation/tlogic/thelpers.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/src/tlogic/thelpers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/implementation/tpattern/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/src/tplayer/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/implementation/tpattern/bombs.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/src/tpattern/bombs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/implementation/tpattern/doublestraight.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/src/tpattern/doublestraight.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/implementation/tpattern/fullhouse.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/src/tpattern/fullhouse.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/implementation/tpattern/multiples.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/src/tpattern/multiples.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/implementation/tpattern/pattern.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/src/tpattern/pattern.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/implementation/tpattern/pfullhouse.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/src/tpattern/pfullhouse.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/implementation/tpattern/straights.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/src/tpattern/straights.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/implementation/tpattern/tpatternrecognizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/src/tpattern/tpatternrecognizer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/implementation/tstudies/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/src/tstudies/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/implementation/tstudies/bombs.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/src/tstudies/bombs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/implementation/tstudies/doublestraight.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/src/tstudies/doublestraight.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/implementation/tstudies/fullhouse.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/src/tstudies/fullhouse.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/implementation/tstudies/straights.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/src/tstudies/straights.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/implementation/tstudies/study.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/src/tstudies/study.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/tests/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/tests/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/tests/tlogic/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/tests/tlogic/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/tests/tlogic/test_card.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/tests/tlogic/test_card.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/tests/tpattern/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/tests/tpattern/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/tests/tpattern/test_multiRec.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/tests/tpattern/test_pattern.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,34 +54,36 @@
     <session id="-699907773">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="3" />
           <entry key="project.open.time.0" value="1" />
           <entry key="project.open.time.11" value="1" />
-          <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="3" />
+          <entry key="project.open.time.39" value="1" />
+          <entry key="project.open.time.7" value="2" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="" value="14" />
           <entry key="Python Console" value="270" />
-          <entry key="dummy" value="44" />
-          <entry key="md" value="568" />
-          <entry key="py" value="54110" />
+          <entry key="dummy" value="48" />
+          <entry key="md" value="2086" />
+          <entry key="py" value="66893" />
           <entry key="rst" value="146" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Markdown" value="568" />
-          <entry key="PLAIN_TEXT" value="44" />
-          <entry key="Python" value="54394" />
+          <entry key="Markdown" value="2086" />
+          <entry key="PLAIN_TEXT" value="48" />
+          <entry key="Python" value="67177" />
           <entry key="ReST" value="146" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Python" value="142" />
+          <entry key="Markdown" value="1" />
+          <entry key="Python" value="179" />
           <entry key="PythonStub" value="2" />
           <entry key="ReST" value="1" />
         </counts>
@@ -69,7 +91,8 @@
       <usages-collector id="statistics.vcs.git.usages" />
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="py" value="142" />
+          <entry key="md" value="1" />
+          <entry key="py" value="179" />
           <entry key="pyi" value="2" />
           <entry key="rst" value="1" />
         </counts>
@@ -77,7 +100,69 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python/src/tpattern/straights.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="32" column="15" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="15" />
+              <folding>
+                <element signature="e#0#34#0" expanded="true" />
+                <marker date="1539562019330" expanded="true" signature="1938:1957" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/python/tests/tpattern/test_straights.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="259">
+              <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#29#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python/lib/python3.7/site-packages/_pytest/python.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="148">
+              <caret line="197" selection-start-line="197" selection-end-line="197" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python/lib/python3.7/site-packages/pluggy/callers.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="283">
+              <caret line="188" selection-start-line="188" selection-end-line="188" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python/src/tpattern/pattern.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+              <folding>
+                <element signature="e#0#10#0" expanded="true" />
+                <marker date="1539560845436" expanded="true" signature="192:193" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/python/src/tplayer/__init__.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -90,6 +175,9 @@
     <replaceStrings>
       <replace />
     </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/python/tests/tpattern</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -97,22 +185,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/tichu/tichu.py" />
-        <option value="$PROJECT_DIR$/tichu/__init__.py" />
-        <option value="$PROJECT_DIR$/tpatterns/__init__.py" />
-        <option value="$PROJECT_DIR$/tpatterns/straights.py" />
-        <option value="$PROJECT_DIR$/tpatterns/triples.py" />
-        <option value="$PROJECT_DIR$/tpatterns/recresult.py" />
-        <option value="$PROJECT_DIR$/tpatterns/pairs.py" />
-        <option value="$PROJECT_DIR$/tpatterns/multiples.py" />
-        <option value="$PROJECT_DIR$/tpatterns/doublestraight.py" />
-        <option value="$PROJECT_DIR$/tpatterns/tpatternrecognizer.py" />
-        <option value="$PROJECT_DIR$/run_studies.py" />
-        <option value="$PROJECT_DIR$/tpatterns/fullhouse.py" />
-        <option value="$PROJECT_DIR$/tstudies/fullhouse.py" />
-        <option value="$PROJECT_DIR$/tpatternrecs/fullhouse.py" />
-        <option value="$PROJECT_DIR$/tstudies/bombs.py" />
-        <option value="$PROJECT_DIR$/tpatternrecs/bombs.py" />
         <option value="$PROJECT_DIR$/tpatternrecs/test_multiRec.py" />
         <option value="$PROJECT_DIR$/test/tpatternrecs/test_multiRec.py" />
         <option value="$PROJECT_DIR$/tpatternrecs/doublestraight.py" />
@@ -130,7 +202,6 @@
         <option value="$PROJECT_DIR$/tgame/stupidplayer.py" />
         <option value="$PROJECT_DIR$/tstudies/straights.py" />
         <option value="$PROJECT_DIR$/recognition.rst" />
-        <option value="$PROJECT_DIR$/recognition.md" />
         <option value="$PROJECT_DIR$/tpatternrecs/multiples.py" />
         <option value="$PROJECT_DIR$/tlogic/tichu.py" />
         <option value="$PROJECT_DIR$/tlogic/__init__.py" />
@@ -148,6 +219,23 @@
         <option value="$PROJECT_DIR$/tlogic/thelpers.py" />
         <option value="$PROJECT_DIR$/tpattern/multiples.py" />
         <option value="$PROJECT_DIR$/tgame/stupidai.py" />
+        <option value="$PROJECT_DIR$/source/implementation/tpattern/straights.py" />
+        <option value="$PROJECT_DIR$/source/implementation/__init__.py" />
+        <option value="$PROJECT_DIR$/source/implementation/tgame/terminal.py" />
+        <option value="$PROJECT_DIR$/python/src/setup.py" />
+        <option value="$PROJECT_DIR$/python/src/tgame/stupidai.py" />
+        <option value="$PROJECT_DIR$/python/src/tpattern/multiples.py" />
+        <option value="$PROJECT_DIR$/python/src/tgame/terminal.py" />
+        <option value="$PROJECT_DIR$/python/src/tpattern/bombs.py" />
+        <option value="$PROJECT_DIR$/python/tests/tpattern/test_multiRec.py" />
+        <option value="$PROJECT_DIR$/python/src/tlogic/tcards.py" />
+        <option value="$PROJECT_DIR$/recognition.md" />
+        <option value="$PROJECT_DIR$/python/src/tpattern/tpatternrecognizer.py" />
+        <option value="$PROJECT_DIR$/python/tests/tpattern/test_pattern.py" />
+        <option value="$PROJECT_DIR$/python/tests/tpattern/test_multiples.py" />
+        <option value="$PROJECT_DIR$/python/src/tpattern/pattern.py" />
+        <option value="$PROJECT_DIR$/python/src/tpattern/straights.py" />
+        <option value="$PROJECT_DIR$/python/tests/tpattern/test_straights.py" />
       </list>
     </option>
   </component>
@@ -165,6 +253,11 @@
             <id>Python</id>
           </State>
         </expanded-state>
+        <selected-state>
+          <State>
+            <id>Buildout</id>
+          </State>
+        </selected-state>
       </profile-state>
     </entry>
   </component>
@@ -180,36 +273,21 @@
           <expand>
             <path>
               <item name="tichu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tichu" type="462c0819:PsiDirectoryNode" />
+              <item name="tichu" type="47feb1d3:ProjectViewModuleNode" />
             </path>
             <path>
               <item name="tichu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tichu" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
+              <item name="tichu" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tichu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tichu" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-              <item name="implementation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tichu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tichu" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
-              <item name="implementation" type="462c0819:PsiDirectoryNode" />
-              <item name="tpattern" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tichu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tichu" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
+              <item name="tichu" type="47feb1d3:ProjectViewModuleNode" />
               <item name="tests" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tichu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tichu" type="462c0819:PsiDirectoryNode" />
-              <item name="source" type="462c0819:PsiDirectoryNode" />
+              <item name="tichu" type="47feb1d3:ProjectViewModuleNode" />
               <item name="tests" type="462c0819:PsiDirectoryNode" />
               <item name="tpattern" type="462c0819:PsiDirectoryNode" />
             </path>
@@ -223,14 +301,17 @@
     <property name="SearchEverywhereHistoryKey" value="tichu.p&#9;FILE&#9;file:///Users/mo/tichu/tichu/tichu.py" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$2/Languages" value="Python" />
     <property name="last_opened_file_path" value="/usr/local/bin/python3" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/python/tgame" />
+      <recent name="$PROJECT_DIR$/python/src/tgame" />
       <recent name="$PROJECT_DIR$/tpattern" />
       <recent name="$PROJECT_DIR$/test/tlogic" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/python/tests/tpattern" />
       <recent name="$PROJECT_DIR$/tstudies" />
       <recent name="$PROJECT_DIR$/tpatterns" />
     </key>
@@ -247,70 +328,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.terminal">
-    <configuration name="multiples" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="tichu" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tpattern" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tpattern/multiples.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="straights" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="tichu" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tstudies" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tstudies/straights.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="stupidai" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="tichu" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tgame" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tgame/stupidai.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Python tests.pytest in test_straights.py">
     <configuration name="terminal" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="tichu" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -319,31 +337,17 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tgame" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python/src/tgame" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tgame/terminal.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/python/src/tgame/terminal.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Unittests for test_card.TestCard.testSetCapabilities" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="tichu" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test/tlogic" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_card.TestCard.testSetCapabilities&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
@@ -360,22 +364,86 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="pytest for test_straights.TestStraights.test_compare_ph" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="tichu" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python/tests/tpattern" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;TestStraights.test_compare_ph&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_straights.TestStraights.test_compare_ph&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_straights.TestStraights.test_compare_simple" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="tichu" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python/tests/tpattern" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_straights.TestStraights.test_compare_simple&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest in test_multiples.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="tichu" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python/tests/tpattern" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/python/tests/tpattern/test_multiples.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest in test_straights.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="tichu" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/python/tests/tpattern" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/python/tests/tpattern/test_straights.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <list>
-      <item itemvalue="Python.straights" />
-      <item itemvalue="Python tests.Unittests for test_card.TestCard.testSetCapabilities" />
       <item itemvalue="Python.terminal" />
-      <item itemvalue="Python.multiples" />
-      <item itemvalue="Python.stupidai" />
+      <item itemvalue="Python tests.pytest in test_multiples.py" />
+      <item itemvalue="Python tests.pytest in test_straights.py" />
+      <item itemvalue="Python tests.pytest for test_straights.TestStraights.test_compare_simple" />
+      <item itemvalue="Python tests.pytest for test_straights.TestStraights.test_compare_ph" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.pytest in test_straights.py" />
+        <item itemvalue="Python tests.pytest for test_straights.TestStraights.test_compare_ph" />
+        <item itemvalue="Python tests.pytest for test_straights.TestStraights.test_compare_simple" />
+        <item itemvalue="Python tests.pytest in test_multiples.py" />
         <item itemvalue="Python.terminal" />
-        <item itemvalue="Python.stupidai" />
-        <item itemvalue="Python.multiples" />
-        <item itemvalue="Python.straights" />
-        <item itemvalue="Python tests.Unittests for test_card.TestCard.testSetCapabilities" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="StructureViewFactory">
+    <option name="AUTOSCROLL_FROM_SOURCE" value="true" />
+    <option name="ACTIVE_ACTIONS" value=",ALPHA_COMPARATOR" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -391,53 +459,54 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Unittests_in_test_multiRec_py - 2018.10.01 at 08h 55m 17s.xml">
-      <configuration name="Unittests in test_multiRec.py" configurationId="tests" />
+    <history-entry file="pytest_in_test_straights_py - 2018.10.15 at 01h 55m 41s.xml">
+      <configuration name="pytest in test_straights.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_card_TestCard_testSetCapabilities - 2018.10.11 at 01h 50m 40s.xml">
-      <configuration name="Unittests for test_card.TestCard.testSetCapabilities" configurationId="tests" />
+    <history-entry file="pytest_in_test_straights_py - 2018.10.15 at 02h 03m 27s.xml">
+      <configuration name="pytest in test_straights.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_card_py - 2018.10.11 at 01h 50m 52s.xml">
-      <configuration name="Unittests in test_card.py" configurationId="tests" />
+    <history-entry file="pytest_in_test_straights_py - 2018.10.15 at 02h 03m 39s.xml">
+      <configuration name="pytest in test_straights.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_in_test_card_py - 2018.10.11 at 01h 50m 57s.xml">
-      <configuration name="Unittests in test_card.py" configurationId="tests" />
+    <history-entry file="pytest_in_test_straights_py - 2018.10.15 at 02h 04m 00s.xml">
+      <configuration name="pytest in test_straights.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_card_TestCard_testSetCapabilities - 2018.10.11 at 01h 55m 06s.xml">
-      <configuration name="Unittests for test_card.TestCard.testSetCapabilities" configurationId="tests" />
+    <history-entry file="pytest_in_test_straights_py - 2018.10.15 at 02h 07m 04s.xml">
+      <configuration name="pytest in test_straights.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_card_TestCard_testSetCapabilities - 2018.10.11 at 01h 56m 22s.xml">
-      <configuration name="Unittests for test_card.TestCard.testSetCapabilities" configurationId="tests" />
+    <history-entry file="pytest_in_test_straights_py - 2018.10.15 at 02h 10m 27s.xml">
+      <configuration name="pytest in test_straights.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_card_TestCard_testSetCapabilities - 2018.10.11 at 02h 08m 47s.xml">
-      <configuration name="Unittests for test_card.TestCard.testSetCapabilities" configurationId="tests" />
+    <history-entry file="pytest_in_test_straights_py - 2018.10.15 at 02h 14m 28s.xml">
+      <configuration name="pytest in test_straights.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_card_TestCard_testSetCapabilities - 2018.10.11 at 02h 09m 45s.xml">
-      <configuration name="Unittests for test_card.TestCard.testSetCapabilities" configurationId="tests" />
+    <history-entry file="pytest_in_test_straights_py - 2018.10.15 at 02h 24m 18s.xml">
+      <configuration name="pytest in test_straights.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_card_TestCard_testSetCapabilities - 2018.10.11 at 02h 09m 56s.xml">
-      <configuration name="Unittests for test_card.TestCard.testSetCapabilities" configurationId="tests" />
+    <history-entry file="pytest_in_test_straights_py - 2018.10.15 at 02h 24m 51s.xml">
+      <configuration name="pytest in test_straights.py" configurationId="tests" />
     </history-entry>
-    <history-entry file="Unittests_for_test_card_TestCard_testSetCapabilities - 2018.10.11 at 02h 09m 58s.xml">
-      <configuration name="Unittests for test_card.TestCard.testSetCapabilities" configurationId="tests" />
+    <history-entry file="pytest_in_test_straights_py - 2018.10.15 at 02h 26m 59s.xml">
+      <configuration name="pytest in test_straights.py" configurationId="tests" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="873" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
-      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
+      <window_info id="Structure" order="1" weight="0.24947146" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3290653" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3277849" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.39692703" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4982382" weight="0.3290653" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49753347" weight="0.3277849" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.65680057" visible="true" weight="0.39692703" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.3290653" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.34319943" side_tool="true" visible="true" weight="0.39692703" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -491,6 +560,16 @@
           <line>9</line>
           <option name="timeStamp" value="33" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/python/src/tpattern/multiples.py</url>
+          <line>45</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/python/tests/tpattern/test_straights.py</url>
+          <line>39</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
@@ -505,174 +584,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tpatternrecs/test_multiRec.py" />
-    <entry file="file:///usr/local/Cellar/python/3.7.0/Frameworks/Python.framework/Versions/3.7/lib/python3.7/dataclasses.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="39">
-          <caret line="936" column="4" selection-start-line="936" selection-start-column="4" selection-end-line="936" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tstudies/fullhouse.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="5" column="14" lean-forward="true" selection-start-line="5" selection-start-column="14" selection-end-line="5" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharmCE2017.1/python_stubs/1437855905/builtins.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="3634" column="8" selection-start-line="3634" selection-start-column="8" selection-end-line="3634" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/run_studies.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tstudies/bombs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="40" lean-forward="true" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/Cellar/python/3.7.0/Frameworks/Python.framework/Versions/3.7/lib/python3.7/typing.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="1599" selection-start-line="1599" selection-end-line="1599" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/Cellar/python/3.7.0/Frameworks/Python.framework/Versions/3.7/lib/python3.7/string.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tstudies/doublestraight.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="49" selection-start-line="10" selection-start-column="49" selection-end-line="10" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpattern/doublestraight.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="630">
-          <caret line="46" column="16" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#62#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpattern/recresult.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="15" selection-start-column="15" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharmCE2018.2/python_stubs/1437855905/PyQt5/QtWidgets/QStatusBar.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="79" column="8" selection-start-line="79" selection-start-column="8" selection-end-line="79" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="8" selection-start-column="8" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/lib/python3.7/site-packages/PyQt5/QtWidgets.pyi">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="5147" column="8" selection-start-line="5147" selection-start-column="8" selection-end-line="5147" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharmCE2018.2/python_stubs/1437855905/PyQt5/QtWidgets/QAbstractItemView.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="561" column="4" selection-start-line="561" selection-start-column="4" selection-end-line="561" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/Cellar/python/3.7.0/Frameworks/Python.framework/Versions/3.7/lib/python3.7/unittest/case.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="257">
-          <caret line="614" selection-start-line="614" selection-end-line="614" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/Cellar/python/3.7.0/Frameworks/Python.framework/Versions/3.7/lib/python3.7/abc.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="44" column="8" selection-start-line="44" selection-start-column="8" selection-end-line="44" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/maingui.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="31" column="31" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
-          <folding>
-            <element signature="e#96#106#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/TCardGrid.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
-          <folding>
-            <element signature="e#153#176#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/tlogic/test_card.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/tlogic/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gui/QTCard.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
-          <folding>
-            <element signature="e#32#55#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/typeshed/stdlib/3/builtins.pyi">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="609" column="6" selection-start-line="609" selection-start-column="6" selection-end-line="609" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///usr/local/Cellar/python/3.7.0/Frameworks/Python.framework/Versions/3.7/lib/python3.7/datetime.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
@@ -680,21 +591,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/recognition.md">
-      <provider selected="true" editor-type-id="restructured-text-editor" />
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/tpatternrecs/test_multiRec.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="28" selection-start-column="28" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/test/tpatternrecs/test_multiRec.py" />
     <entry file="file:///usr/local/Cellar/python/3.7.0/Frameworks/Python.framework/Versions/3.7/lib/python3.7/http/client.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
@@ -702,66 +599,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tstudies/straights.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="99">
-          <caret line="22" column="21" selection-start-line="22" selection-start-column="21" selection-end-line="22" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tlogic/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpattern/pfullhouse.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="46" selection-start-line="7" selection-start-column="46" selection-end-line="7" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpattern/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpattern/bombs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpattern/straights.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="32" column="46" selection-start-line="32" selection-start-column="46" selection-end-line="32" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpattern/fullhouse.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="8" column="19" selection-start-line="8" selection-start-column="19" selection-end-line="8" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpattern/tpatternrecognizer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/tstudies/straights.py" />
+    <entry file="file://$PROJECT_DIR$/tlogic/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/tpattern/pfullhouse.py" />
+    <entry file="file://$PROJECT_DIR$/tpattern/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/tpattern/bombs.py" />
+    <entry file="file://$PROJECT_DIR$/tpattern/straights.py" />
+    <entry file="file://$PROJECT_DIR$/tpattern/fullhouse.py" />
+    <entry file="file://$PROJECT_DIR$/tpattern/tpatternrecognizer.py" />
     <entry file="file:///usr/local/Cellar/python/3.7.0/Frameworks/Python.framework/Versions/3.7/lib/python3.7/collections/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="877">
@@ -797,106 +642,199 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tgame/tplayer.py">
+    <entry file="file://$PROJECT_DIR$/tgame/tplayer.py" />
+    <entry file="file://$PROJECT_DIR$/tpattern/pattern.py" />
+    <entry file="file://$PROJECT_DIR$/tstudies/study.py" />
+    <entry file="file://$PROJECT_DIR$/tgame/humanplayer.py" />
+    <entry file="file://$PROJECT_DIR$/tlogic/thelpers.py" />
+    <entry file="file://$PROJECT_DIR$/tlogic/tcards.py" />
+    <entry file="file://$PROJECT_DIR$/tgame/server.py" />
+    <entry file="file://$PROJECT_DIR$/tgame/terminal.py" />
+    <entry file="file://$PROJECT_DIR$/tpattern/multiples.py" />
+    <entry file="file://$PROJECT_DIR$/tgame/stupidai.py" />
+    <entry file="file://$PROJECT_DIR$/source/implementation/tpattern/recresult.py" />
+    <entry file="file://$PROJECT_DIR$/python/src/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/python/src/setup.py" />
+    <entry file="file://$PROJECT_DIR$/python/src/run_studies.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/src/tplayer/terminal.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+        <state relative-caret-position="615">
+          <caret line="44" column="24" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
+          <folding>
+            <element signature="e#202#212#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/src/tlogic/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/src/tplayer/stupidai.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="e#0#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/tests/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/src/tplayer/tplayer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpattern/pattern.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/python/src/tplayer/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/tstudies/study.py">
+    <entry file="file://$PROJECT_DIR$/python/src/tpattern/multiples.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1093">
-          <caret line="73" lean-forward="true" selection-start-line="73" selection-end-line="73" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tgame/humanplayer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tlogic/thelpers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="45" selection-start-line="45" selection-end-line="45" />
-          <folding>
-            <element signature="e#14#49#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tlogic/tcards.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="49" selection-start-line="49" selection-end-line="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///usr/local/Cellar/python/3.7.0/Frameworks/Python.framework/Versions/3.7/lib/python3.7/enum.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="217" selection-start-line="217" selection-end-line="217" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tgame/server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="70" selection-start-line="70" selection-end-line="70" />
-          <folding>
-            <element signature="e#0#16#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tgame/terminal.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="43" selection-start-line="43" selection-end-line="43" />
-          <folding>
-            <element signature="e#202#213#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpattern/multiples.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="46" selection-start-line="46" selection-end-line="46" />
+        <state relative-caret-position="885">
+          <caret line="59" column="8" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="8" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tgame/stupidai.py">
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharmCE2018.2/python_stubs/-58320025/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="35" column="19" selection-start-line="35" selection-start-column="19" selection-end-line="35" selection-end-column="19" />
+        <state relative-caret-position="147">
+          <caret line="731" column="6" selection-start-line="731" selection-start-column="6" selection-end-line="731" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/src/tplayer/server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/Cellar/python/3.7.0/Frameworks/Python.framework/Versions/3.7/lib/python3.7/enum.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="284">
+          <caret line="306" selection-start-line="306" selection-end-line="306" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recognition.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="151">
+            <caret line="38" selection-start-line="38" selection-end-line="38" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+      <provider editor-type-id="restructured-text-editor" />
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/src/tpattern/tpatternrecognizer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="29" column="57" selection-start-line="29" selection-start-column="57" selection-end-line="29" selection-end-column="57" />
           <folding>
-            <element signature="e#0#45#0" expanded="true" />
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/tests/tpattern/test_pattern.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+            <marker date="1539518045831" expanded="true" signature="147:248" ph="..." />
+            <marker date="1539518045831" expanded="true" signature="182:191" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/src/tpattern/bombs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/tests/tpattern/test_multiples.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="29" column="15" selection-start-line="29" selection-start-column="15" selection-end-line="29" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/src/tlogic/tcards.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="103" selection-start-line="103" selection-end-line="103" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+            <marker date="1539516708953" expanded="true" signature="389:394" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/src/tpattern/pattern.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+            <marker date="1539560845436" expanded="true" signature="192:193" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/src/tpattern/straights.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="32" column="15" selection-start-line="32" selection-start-column="15" selection-end-line="32" selection-end-column="15" />
+          <folding>
+            <element signature="e#0#34#0" expanded="true" />
+            <marker date="1539562019330" expanded="true" signature="1938:1957" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/lib/python3.7/site-packages/_pytest/python.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="197" selection-start-line="197" selection-end-line="197" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/lib/python3.7/site-packages/pluggy/callers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="283">
+          <caret line="188" selection-start-line="188" selection-end-line="188" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/tests/tpattern/test_straights.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="39" column="25" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>

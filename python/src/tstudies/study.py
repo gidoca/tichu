@@ -48,13 +48,13 @@ def street_my_hand(deck):
         shuffle = r.sample(deck, 56)
         myCards = shuffle[:14]
         myCards.sort(key=lambda x: x.height)
-        isMyStraight = StraightRec.__find_straight__(myCards)
+        isMyStraight = StraightRec._find_straight_(myCards)
         # print ("Straight?", straights)
         otherStraight = False
         for s in range(1,4):
             oCards = shuffle[s*14:(s+1)*14]
             oCards.sort(key=lambda x: x.height)
-            oStraights = StraightRec.__find_straight__(oCards)
+            oStraights = StraightRec._find_straight_(oCards)
             otherStraight = otherStraight or oStraights
             # print (s,oStraights)
 

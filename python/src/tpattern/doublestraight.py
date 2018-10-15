@@ -60,10 +60,10 @@ class DoubleStraightRec(TPatternRecognizer):
 
 
 if __name__ == '__main__':
-    cards1 = map(Card.from_string, 'r2 g2 r3 k3 k5 k9'.split(' '))
-    cards2 = map(Card.from_string, 'r2 g2 r3 k3 k5 k9 r4 g4'.split(' '))
-    cards3 = map(Card.from_string, 'r2 g3 r3 k3 k5 k9'.split(' '))
-    cards4 = map(Card.from_string, 'r2 g2 r3 k3 k5 k9 r4 g4 r5 r10 g10 k11 g11'.split(' '))
+    cards1 = map(tcard, 'r2 g2 r3 k3 k5 k9'.split(' '))
+    cards2 = map(tcard, 'r2 g2 r3 k3 k5 k9 r4 g4'.split(' '))
+    cards3 = map(tcard, 'r2 g3 r3 k3 k5 k9'.split(' '))
+    cards4 = map(tcard, 'r2 g2 r3 k3 k5 k9 r4 g4 r5 r10 g10 k11 g11'.split(' '))
     pr = DoubleStraightRec()
 
     print(pr.recognize(cards1))

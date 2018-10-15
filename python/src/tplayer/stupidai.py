@@ -2,7 +2,7 @@ from idlelib.debugger_r import tracebacktable
 from inspect import Traceback
 from typing import Set, Callable
 
-from tgame.tplayer import TPlayer
+from tplayer.tplayer import TPlayer
 from tlogic.tcards import Card
 from tlogic.thelpers import rec_pattern_unique
 
@@ -11,10 +11,11 @@ class StupidAI(TPlayer):
 
     def play(self, table_cards: Set[Card], card_receiver: Callable[[Set[Card]], bool], wish=None) -> None:
         cards = []
-        if len(table_cards) == 0:
-            cards = self.start()
-        else:
-            cards = self.react(table_cards)
+        if self.cards:
+            if len(table_cards) == 0:
+                cards = self.start()
+            else :
+                cards = self.react(table_cards)
 
         card_receiver(cards, self.cards)
         self.cards.difference_update(cards)
