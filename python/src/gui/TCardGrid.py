@@ -8,15 +8,17 @@ whether the selection is valid or not
 """
 from typing import List
 
-from PyQt5.QtGui import QStandardItemModel, QStandardItem
-from PyQt5.QtWidgets import QWidget, QListView, QListWidget, QAbstractItemView, QGridLayout
+# noinspection PyUnresolvedReferences
+from PyQt5.QtWidgets import QWidget, QGridLayout
 
 from gui.QTCard import QTCard
-from tlogic import Card
+from pychu.tlogic.tcards import Card
 
 
 class TCardGrid( QWidget):
-    def __init__(self, cards: List[Card] = []):
+    def __init__(self, cards=None):
+        if cards is None:
+            cards = []
         self.cards = cards
         super().__init__()
         self.initUI()

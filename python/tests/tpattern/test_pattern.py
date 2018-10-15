@@ -1,7 +1,6 @@
 from unittest import TestCase
 
-from tlogic.tcards import Card, tcards
-from tpattern.multiples import MultiRec
+from pychu.tlogic.tcards import tcards
 
 
 class TestRecAllPatterns(TestCase):

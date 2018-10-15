@@ -1,5 +1,6 @@
-from tstudies import straights, bombs, doublestraight, fullhouse
-from tlogic import generate_deck
+from pychu.tlogic.thelpers import generate_deck
+from pychu.tstudies import fullhouse
+from pychu.tstudies import straights, bombs
 
 deck=generate_deck();
 print (straights.street_my_hand(deck))

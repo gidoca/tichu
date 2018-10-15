@@ -1,1 +1,1 @@
-from gui.TCardGrid import TCardGrid
+from gui import TCardGrid

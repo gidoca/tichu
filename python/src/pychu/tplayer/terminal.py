@@ -12,12 +12,14 @@ from typing import List, Set, Dict
 print (sys.path)
 
 import tlogic
+# noinspection PyUnresolvedReferences
 from tplayer.humanplayer import HumanPlayer
-from tplayer.server import TCardTable, TEventList, TEvent
+from pychu.tplayer.server import TCardTable, TEventList, TEvent
+# noinspection PyUnresolvedReferences
 from tplayer.stupidai import StupidAI
+# noinspection PyUnresolvedReferences
 from tplayer.tplayer import TPlayer
-from tlogic.tcards import Card, dog
-from tlogic.thelpers import generate_deck
+from pychu.tlogic.tcards import Card, dog
 
 
 class State(Enum):

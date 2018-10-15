@@ -1,10 +1,9 @@
 #!/bin/python
 from typing import Collection, List
 
-from tlogic.tcards import Color, Card, dragon, phoenix, mahjong, dog
-from tpattern.multiples import TMulti, PassOrEmpty
-from tpattern.pattern import TPattern
-
+from pychu.tlogic.tcards import Card, Color, dragon, phoenix, mahjong, dog
+from pychu.tpattern.multiples import TMulti, PassOrEmpty
+from pychu.tpattern.pattern import TPattern
 
 
 def generate_deck() -> List[Card]:
@@ -49,11 +48,6 @@ def rec_pattern_unique(cards: Collection[Card]) -> TPattern:
             except Exception as ex:
                 print(pat, cards, ex)
                 continue
-
-
-
-
-
 
 
 def rec_pattern_multi(cards: Collection[Card]) -> List[TPattern]:

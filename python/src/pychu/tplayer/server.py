@@ -1,11 +1,10 @@
-import itertools
 import random as r
 from dataclasses import dataclass
 from enum import Enum, auto
 from typing import Set, List
 
-from tlogic.tcards import Card
-from tlogic.thelpers import generate_deck
+from pychu.tlogic.tcards import Card, tcard
+from pychu.tlogic.thelpers import generate_deck
 
 
 class TEventList(Enum):

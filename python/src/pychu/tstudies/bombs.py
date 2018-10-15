@@ -3,8 +3,8 @@ import random as r
 
 # TODO: this is logic
 # -> replace by multiples rec.
-from tlogic import generate_deck
-from tpattern.bombs import find_bombs
+from pychu.tlogic.thelpers import generate_deck
+from pychu.tpattern.bombs import find_bombs
 
 
 def bomb(deck):

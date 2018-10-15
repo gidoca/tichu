@@ -6,11 +6,8 @@ First try of creating a Qt gui (via python)
 
 import sys
 
-from PyQt5.QtGui import QIcon
-from PyQt5.QtWidgets import QApplication, QPushButton, QMainWindow, QAction, qApp, QWidget, QMenuBar
-
 from gui import TCardGrid
-from tlogic import Card
+from pychu.tlogic.tcards import tcards
 
 
 class TiQu(QMainWindow):
@@ -33,7 +30,7 @@ class TiQu(QMainWindow):
         file = self.menuBar.addMenu('&Gagi')
         file.addAction(exitAct)
 
-        cards = mstr('g2 b3 k5')
+        cards = tcards('g2 b3 k5')
 
         qcardgrid = TCardGrid(cards)
         self.setCentralWidget(qcardgrid)

@@ -1,10 +1,15 @@
-from tpattern.multiples import MultiRec
-from tpattern.tpatternrecognizer import TPatternRecognizer
-from tlogic.tcards import Card
+from pychu.tpattern.multiples import MultiRec
+from pychu.tpattern.tpatternrecognizer import TPatternRecognizer
+from pychu.tlogic.tcards import Card, has_phoenix, tcard
 from typing import Set
 
 
-class FullhouseRec(TPatternRecognizer) :
+class TFullHouse:
+    def __init__(self, cards: Set[Card]):
+        pass
+
+
+class FullhouseRec(TPatternRecognizer):
     # Only pairs (not if cont. >2 matching)
     pairRec = MultiRec(2, True)
     tripleRec = MultiRec(3, True)
@@ -17,12 +22,10 @@ class FullhouseRec(TPatternRecognizer) :
         else:
             return FullhouseRec.__find_fullhouse__(cards)
 
-
-
     @staticmethod
     def __find_fullhouse_phoenix__(cards: Set[Card]) -> bool:
-        if Card.has_phoenix(cards):
-            #special
+        if has_phoenix(cards):
+            # special
             pass
         else:
             return FullhouseRec.__find_fullhouse__(cards);
@@ -34,21 +37,20 @@ class FullhouseRec(TPatternRecognizer) :
         num_pairs = FullhouseRec.pairRec.recognize(cards)
         num_triples = FullhouseRec.tripleRec.recognize(cards)
 
-        if (num_triples>0):
-            diff = num_pairs-num_triples;
+        if (num_triples > 0):
+            diff = num_pairs - num_triples;
             if (diff) >= 0:
                 return min(num_pairs, num_triples);
             else:
-                matching = num_pairs #because num_triples < num_pairs, ergo num_pairs is the number of matching pa
+                matching = num_pairs  # because num_triples < num_pairs, ergo num_pairs is the number of matching pa
                 # print('matching', matching)
-                additional = (num_triples-num_pairs)//2;
+                additional = (num_triples - num_pairs) // 2;
                 # print('additional', additional)
-                return matching+additional
+                return matching + additional
 
-def pr(num : int):
+
+def pr(num: int):
     print("Number of full houses", num)
-
-
 
 
 if __name__ == '__main__':

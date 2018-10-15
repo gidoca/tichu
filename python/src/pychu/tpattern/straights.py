@@ -1,9 +1,9 @@
 from typing import Set, Collection
 
-from tlogic.tcards import Card, phoenix, Special
-from tpattern.multiples import PassOrEmpty
-from tpattern.pattern import TPattern
-from tpattern.tpatternrecognizer import TPatternRecognizer, TPatternRecResult
+from pychu.tlogic.tcards import Card, Special, has_phoenix
+from pychu.tpattern.multiples import PassOrEmpty
+from pychu.tpattern.pattern import TPattern
+from pychu.tpattern.tpatternrecognizer import TPatternRecognizer, TPatternRecResult
 
 
 class TStraight(TPattern):
@@ -23,7 +23,7 @@ class TStraight(TPattern):
         sorted_cards_iter = iter(sorted_cards)
         first_card = next(sorted_cards_iter)
         self.lowest = first_card.rank
-        phx = Card.has_phoenix(sorted_cards)
+        phx = has_phoenix(sorted_cards)
 
         redundant_ranks = []
         self.phx_rank = None
@@ -90,7 +90,7 @@ class StraightRec(TPatternRecognizer):
         buffer = []
         out = []
         first = True
-        phoenix = Card.has_phoenix(cards)
+        phoenix = has_phoenix(cards)
         phoenix_used = False
         phoenix_pos = -2
         i = 0

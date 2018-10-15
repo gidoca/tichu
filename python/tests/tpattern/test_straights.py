@@ -1,10 +1,9 @@
-from unittest import TestCase
-
 import pytest
 import pytest as pt
+from pytest import mark
 
-from tlogic.tcards import tcards
-from tpattern.straights import StraightRec, TStraight
+from pychu.tlogic.tcards import tcards
+from pychu.tpattern.straights import StraightRec
 
 
 class TestStraights():
@@ -29,16 +28,24 @@ class TestStraights():
         pt.assume(p.combos == 1)
         pt.assume(len(p.redundant_ranks) == 2)
 
-    @pytest.mark.parametrize('c1,c2,exp', [
+    @mark.parametrize('c1,c2,exp', [
         ('r2 r3 r4 r5 g6', 'r2 r3 r4 r5 g6 g7', True),
         ('r2 r3 r4 r5 g6', 'r2 r3 r4 r5 g6 phx', True),
-        ('r10 b11 g12 r13 g14', 'r10 b11 g12 r13 g14 ph', False)
+        ('r2 r3 r4 r5 g6', 'r3 r4 r5 g6 phx', True),
+        ('r3 r4 r5 g6 phx','r2 r3 r4 r5 g6',  False),
+        ('r10 b11 g12 r13 g14', 'r10 b11 g12 r13 g14 ph', False),
+        ('k9 r10 b11 g12 r13', 'r10 b11 g12 r13 g14 ph', True)
     ])
     def test_compare(self, c1, c2, exp):
         st1 = TStraight(tcards(c1))
         st2 = TStraight(tcards(c2))
         assert (st2 > st1) is exp
 
-    def test_illegal_straight(self):
+    @mark.parametrize('c', [
+        'b11 g12 r13 g14',
+        'r8 b11 g12 r13 g14 ',
+        'r8 phx b11 g12 r13 g14 '
+    ])
+    def test_illegal_straight(self, c):
         with pytest.raises(ValueError):
-            st1 = TStraight(tcards('b11 g12 r13 g14'))
+            st1 = TStraight(tcards(c))

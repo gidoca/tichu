@@ -2,8 +2,8 @@ from abc import ABC, abstractmethod
 from enum import Enum, auto
 from typing import Set, Callable
 
-from tplayer.server import TEvent
-from tlogic.tcards import Card
+from pychu.tplayer.server import TEvent
+from pychu.tlogic.tcards import Card
 
 
 class TICHU(Enum):

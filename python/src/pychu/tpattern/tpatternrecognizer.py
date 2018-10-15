@@ -1,9 +1,8 @@
 import abc
-from collections import namedtuple
 from dataclasses import dataclass
 from typing import Set, List
-from tlogic.tcards import Card
-from tpattern.pattern import TPattern
+from pychu.tlogic.tcards import Card
+from pychu.tpattern.pattern import TPattern
 
 
 @dataclass

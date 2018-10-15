@@ -1,11 +1,9 @@
 import random as r
 
-from tlogic.thelpers import generate_deck
-from tpattern.straights import StraightRec
-
-
 # TODO: refactor into testfunctions?
-from tstudies.study import existence
+from pychu.tlogic.thelpers import generate_deck
+from pychu.tpattern.straights import StraightRec
+from pychu.tstudies.study import existence
 
 
 def street_any_hand(deck, ph=False):

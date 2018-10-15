@@ -1,5 +1,5 @@
-from tpattern.tpatternrecognizer import TPatternRecognizer
-from tlogic import Card
+from pychu.tlogic.tcards import tcard, Card
+from pychu.tpattern.tpatternrecognizer import TPatternRecognizer
 from collections import Counter
 
 from typing import Set

@@ -1,12 +1,13 @@
 import random as r
 from typing import Callable, Set
 
-from tlogic.tcards import Card
-from tlogic.thelpers import generate_deck
-from tpattern.straights import StraightRec
-
-
+from pychu.tlogic.tcards import Card
 # TODO: refactor into testfunctions?
+from pychu.tlogic.thelpers import generate_deck
+from pychu.tpattern.straights import StraightRec
+from pychu.tstudies.straights import street_any_hand
+
+
 def existence(deck: Set[Card], recognize_f: Callable[[Set[Card], bool], bool],name: str, ph=False, ):
     k=10000
     found = 0; found2 = 0; found3 = 0; found4 = 0

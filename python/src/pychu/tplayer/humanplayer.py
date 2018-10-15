@@ -1,9 +1,10 @@
 import sys
 from typing import Set
 
-from tplayer.server import TEvent
-from tplayer.tplayer import TPlayer
-from tlogic.tcards import Card
+from pychu.tplayer.server import TEvent
+# noinspection PyUnresolvedReferences
+from pychu.tplayer.tplayer import TPlayer
+from pychu.tlogic.tcards import Card, tcards
 
 
 class HumanPlayer(TPlayer):
@@ -32,7 +33,7 @@ class HumanPlayer(TPlayer):
                 if inp == "pass" or inp == "p":
                     cards = []
                 else:
-                    cards = mstr(inp)
+                    cards = tcards(inp)
 
                 validpattern = cards_validator(cards, self.cards)
 

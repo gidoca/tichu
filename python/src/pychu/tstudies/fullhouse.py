@@ -1,6 +1,9 @@
 import random as r
-from tpattern.fullhouse import FullhouseRec
 # TODO: this could be merged with all the other functions based on the same iteration over the cards
+from pychu.tlogic.thelpers import generate_deck
+from pychu.tpattern.fullhouse import FullhouseRec
+
+
 def full_house_myhand(deck, ph=False):
     pr = FullhouseRec
     k=10000
@@ -37,7 +40,6 @@ def full_house_myhand(deck, ph=False):
     return out
 
 if __name__ == '__main__':
-    from tlogic import generate_deck
 
     deck=generate_deck()
     out = full_house_myhand(deck)

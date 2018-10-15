@@ -1,7 +1,8 @@
 from enum import Enum
-from typing import Iterable, Union
+from typing import Iterable, Union, List
 
 
+# todo: rename-> tcolor (avoids possible problems with GUI and stuff later on)
 class Color(Enum):
     """
     Represents the Tichu color scheme:
@@ -19,7 +20,7 @@ class Color(Enum):
         return color
 
     def __str__(self):
-        return self.name[0]
+        return self.value
 
 
 class Special(Enum):
@@ -40,16 +41,36 @@ class Special(Enum):
 
 class Card:
     # TODO special and None color is the same property
-    def __init__(self, color=None, rank=None, special=None):
-        self.special = special
-        self.rank = rank
-        self.color = color
+    __tichu_dict__ = {}
+
+    __slots__ = 'color', 'rank', 'special'
+
+    def __setattr__(self, key, value):
+        raise TypeError
+
+
+    def __new__(cls, color=None, rank=None, special=None):
+
+        id_str = Card._id_(color, rank, special)
+        if id_str in Card.__tichu_dict__:
+            return Card.__tichu_dict__[id_str]
+        else:
+            o = object.__new__(cls)
+            object.__setattr__(o, 'special', special)
+            super(Card,o).__setattr__('rank', rank)
+            super(Card,o).__setattr__('color', color)
+            Card.__tichu_dict__[id_str] = o
+            return o
 
     def __repr__(self):
-        if self.special is not None:
-            return str(self.special)
+        return self._id_(self.color, self.rank, self.special)
+
+    @staticmethod
+    def _id_(color=None, rank=None, special=None):
+        if special is None:
+            return str(color) + str(rank)
         else:
-            return str(self.color) + str(self.rank)
+            return str(special)
 
     def __eq__(self, other):
         return self.__repr__() == other.__repr__()
@@ -57,15 +78,15 @@ class Card:
     def __hash__(self):
         return self.__repr__().__hash__()
 
-    @staticmethod
-    def has_phoenix(cards):
-        for card in cards:
-            if card.special == Special.phoenix:
-                return card
-        return None
+
+def has_phoenix(cards):
+    for card in cards:
+        if card.special == Special.phoenix:
+            return card
+    return None
 
 
-def tcard(card_str: str):
+def tcard(card_str: str) -> Card:
     if card_str.startswith('dr'):
         return dragon
     elif card_str.startswith('ph'):
@@ -80,7 +101,7 @@ def tcard(card_str: str):
         return Card(color=color, rank=rank);
 
 
-def tcards(param: Union[str, Iterable[str]]):
+def tcards(param: Union[str, Iterable[str]]) -> List[Card]:
     """
 
     :param param:  String separated by space or iterable of strings
@@ -88,7 +109,9 @@ def tcards(param: Union[str, Iterable[str]]):
     :return:
     """
     if isinstance(param, str):
-        cardstrings = param.split(' ')
+        if param == '':
+            return []
+        cardstrings = param.strip().split(' ')
     else:
         cardstrings = param
     cards = list(map(tcard, cardstrings))

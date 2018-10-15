@@ -1,8 +1,7 @@
 """
 Display of a Tichu Card
 """
-from PyQt5 import QtGui
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import QtGui
 from PyQt5.QtWidgets import QWidget, QLabel, QGridLayout
 
 from tlogic import Card
@@ -23,7 +22,7 @@ class QTCard(QWidget):
         layout.addWidget(QLabel(text), 0, 1)
         layout.addWidget(QLabel(text), 1, 0)
         layout.addWidget(QLabel(text), 1, 1)
-        self.setBgColor(Qt.white)
+        self.setBgColor(QtGui.white)
 
     def setBgColor(self, color):
 
@@ -35,9 +34,9 @@ class QTCard(QWidget):
 
     def toggleSelection(self):
         if self.selected:
-            self.setBgColor(Qt.green)
+            self.setBgColor(QtGui.green)
         else:
-            self.setBgColor(Qt.white)
+            self.setBgColor(QtGui.white)
 
         self.selected = not self.selected
 

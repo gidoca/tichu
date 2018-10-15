@@ -1,8 +1,8 @@
 from typing import Set
 
-from tlogic.tcards import Card
-from tpattern.multiples import MultiRec
-from tpattern.tpatternrecognizer import TPatternRecognizer
+from pychu.tlogic.tcards import Card
+from pychu.tpattern.multiples import MultiRec
+from pychu.tpattern.tpatternrecognizer import TPatternRecognizer
 
 
 def find_bombs(cards):

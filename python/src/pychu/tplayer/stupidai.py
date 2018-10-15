@@ -1,10 +1,9 @@
-from idlelib.debugger_r import tracebacktable
-from inspect import Traceback
 from typing import Set, Callable
 
+# noinspection PyUnresolvedReferences
 from tplayer.tplayer import TPlayer
-from tlogic.tcards import Card
-from tlogic.thelpers import rec_pattern_unique
+from pychu.tlogic.tcards import Card
+from pychu.tlogic.thelpers import rec_pattern_unique
 
 
 class StupidAI(TPlayer):

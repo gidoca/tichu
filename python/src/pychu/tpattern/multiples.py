@@ -1,8 +1,8 @@
 from itertools import groupby
 
-from tlogic.tcards import Card
-from tpattern.pattern import TPattern
-from tpattern.tpatternrecognizer import TPatternRecognizer, TPatternRecResult
+from pychu.tlogic.tcards import Card, phoenix, has_phoenix
+from pychu.tpattern.pattern import TPattern
+from pychu.tpattern.tpatternrecognizer import TPatternRecognizer, TPatternRecResult
 
 from typing import Set
 
@@ -20,16 +20,31 @@ class PassOrEmpty():
 
 class TMulti(TPattern):
     def __init__(self, cards):
-        if len(cards) > 4:
+        self.cards = cards
+        if not cards:
+            raise ValueError("At least one Card must be given!")
+        elif len(cards) > 4:
             raise ValueError("There can not be more than 4 of the same height")
-        else:
-            self.rank = next(iter(cards)).rank
 
-        for card in cards:
-            if card.rank != self.rank:
+        prev_rank = None
+        cnt_wo_phx = 0
+        phx = False
+        for c in cards:
+            if c.__eq__(phoenix):
+                phx = True
+            elif prev_rank and prev_rank != c.rank:
                 # todo accept phoenix
                 raise ValueError("All heights must be the same")
-        self.numberof = len(cards)
+            else:
+                prev_rank = c.rank
+                cnt_wo_phx += 1
+
+        self.rank = prev_rank
+
+        if cnt_wo_phx < 3:
+            self.numberof = cnt_wo_phx + phx
+        else:
+            self.numberof = cnt_wo_phx
 
     def __repr__(self):
         return "{}x{}:{}".format(self.numberof, self.rank, self.cards)
@@ -38,22 +53,16 @@ class TMulti(TPattern):
         mm = MultiRec(self.numberof, exact=exact)
         res = mm.recognize(cards, True)
 
-        return {k:res[k] for k in res if k > self.rank}
+        return {k: res[k] for k in res if k > self.rank}
 
     def __gt__(self, other):
         if isinstance(other, TMulti):
-            if other.numberof != self.numberof:
-                raise ValueError('Multiple - Self: {} - Other: {}'.format(self.numberof, other.numberof))
-            return self.rank > other.rank
+            return self.numberof >= other.numberof and self.rank > other.rank
         # Problem phoenix -> make a "TSingle" class?
         elif isinstance(other, PassOrEmpty):
             return True
         else:
-            # TODO: think about a better exception to raise
-            raise ValueError
-
-    def getCards(self):
-        return self.cards
+            return False
 
 
 class MultiRec(TPatternRecognizer):
@@ -63,7 +72,7 @@ class MultiRec(TPatternRecognizer):
 
     def recognize(self, cards: Set[Card], phoenix=False) -> int:
         # do we count now
-        if Card.has_phoenix(cards):
+        if has_phoenix(cards):
             return self.recognize_ph(cards)
         else:
             return self.recognize_wo_ph(cards)
@@ -81,9 +90,9 @@ class MultiRec(TPatternRecognizer):
         else:
             matcher = lambda v: v >= self.m
 
-        grouped_raw = {k:list(grp) for k,grp in groupby(sorted_cards, keyfunc)}
+        grouped_raw = {k: list(grp) for k, grp in groupby(sorted_cards, keyfunc)}
 
-        grouped = {k:v for k,v in grouped_raw.items() if matcher(len(v))}
+        grouped = {k: v for k, v in grouped_raw.items() if matcher(len(v))}
 
         # pairslist = {k: v for k, v in Counter(newlist).items() if matcher(v)}
 
@@ -93,8 +102,9 @@ class MultiRec(TPatternRecognizer):
 
 
 if __name__ == '__main__':
-    from tlogic.thelpers import generate_deck, PassOrEmpty
 
+    # That is a looping import..
+    from pychu.tlogic.thelpers import generate_deck
     deck = generate_deck()
 
     pr = MultiRec()

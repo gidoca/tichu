@@ -1,0 +1,19 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="tlogic.thelpers" />
+          <option value="int.__getitem__" />
+          <option value="tpattern.test_multiples.TestMultiRec.assertEqual" />
+          <option value="pytest.assume" />
+          <option value="player" />
+          <option value="cards" />
+          <option value="message" />
+          <option value="pychu.tpattern.pattern.TPattern.getCards" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
