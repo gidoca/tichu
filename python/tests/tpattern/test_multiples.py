@@ -16,13 +16,13 @@ class TestMultiRec():
         cards = tcards('k2 r2 b2 g2')
         pr = MultiRec(4)
         out = pr.recognize(cards)
-        self.assertEqual({1: cards}, out)
+        assert {2:(cards)} == out
 
     def test_4simpleph(self):
         cards = tcards('k2 r2 b2 b3')
         pr = MultiRec(4)
         out = pr.recognize(cards)
-        self.assertEqual({}, out)
+        assert out == {}
 
     def test_trix2(self):
         tri2 = tcards('k2 r2 b2')
@@ -32,26 +32,32 @@ class TestMultiRec():
         pr = MultiRec(3)
         out = pr.recognize(cards)
         pytest.assume(len(out) == 2)
-        pytest.assume(out[0].rank == 2)
-        pytest.assume(out[1].rank == 3)
+        pytest.assume(tri2 == out[2])
+        pytest.assume(tri3 == out[3])
 
     def test_3fail(self):
         cards = tcards('k2 r2 b3 g3')
         pr = MultiRec(3)
         out = pr.recognize(cards)
-        self.assertEqual(1, out)
+        assert out == {}
 
     def test_2x2(self):
         cards = tcards('k2 r2 b3 g3')
         pr = MultiRec(2)
         out = pr.recognize(cards)
-        self.assertEqual(2, out)
+        assert out == {2:(tcards('k2 r2')), 3:(tcards('b3 g3'))}
 
-    def test_4ph(self):
+    def test_2ph(self):
         cards = tcards('k2 g2 ph b3 g3')
         pr = MultiRec(2)
         out = pr.recognize(cards, True)
-        self.assertEqual(2, out)
+        assert {2:(tcards('k2 g2')), 3:(tcards('b3 g3'))} == out
+
+    def test_3ph(self):
+        cards = tcards('k2 g2 ph b3 g3')
+        pr = MultiRec(3)
+        out = pr.recognize(cards, True)
+        assert {2:(tcards('k2 g2 ph')), 3:(tcards('b3 g3 ph'))} == out
 
     @mark.parametrize('c1,c2,exp', [
         ('ma', 'k9', True),
@@ -73,6 +79,10 @@ class TestMultiRec():
         'do r4',
         'k2 r2 g4',
         '',
+        {2: 'sdf'},
+        'asfdas',
+        23
+
     ])
     def test_illegal_multi(self, c):
         with pytest.raises(ValueError):
@@ -91,3 +101,7 @@ class TestMultiRec():
         tm = TMulti(cards)
         assert rank == tm.rank
         assert numberof == tm.numberof
+
+    
+
+

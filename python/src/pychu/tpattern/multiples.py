@@ -4,7 +4,7 @@ from pychu.tlogic.tcards import Card, phoenix, has_phoenix
 from pychu.tpattern.pattern import TPattern
 from pychu.tpattern.tpatternrecognizer import TPatternRecognizer, TPatternRecResult
 
-from typing import Set
+from typing import Set, Dict, List
 
 
 class PassOrEmpty():
@@ -47,13 +47,13 @@ class TMulti(TPattern):
             self.numberof = cnt_wo_phx
 
     def __repr__(self):
-        return "{}x{}:{}".format(self.numberof, self.rank, self.cards)
+        return "{}@{}:{}".format(self.numberof, self.rank, self.cards)
 
     def find(self, cards, higher=True, exact=True):
         mm = MultiRec(self.numberof, exact=exact)
         res = mm.recognize(cards, True)
 
-        return {k: res[k] for k in res if k > self.rank}
+        return {k: TMulti(res[k]) for k in res if k > self.rank}
 
     def __gt__(self, other):
         if isinstance(other, TMulti):
@@ -70,20 +70,26 @@ class MultiRec(TPatternRecognizer):
         self.m = m;
         self.exact = exact;
 
-    def recognize(self, cards: Set[Card], phoenix=False) -> int:
+    #todo: phoenix=True makes more sense
+    #todo: add greedy flag (now the phx is only used when needed)
+    #todo: is m needed?
+    def recognize(self, cards: Set[Card], phoenix=False) -> Dict[int, List[Card]]:
         # do we count now
         if has_phoenix(cards):
             return self.recognize_ph(cards)
         else:
             return self.recognize_wo_ph(cards)
 
-    def recognize_ph(self, cards: Set[Card]) -> TPatternRecResult:
+    def recognize_ph(self, cards: Set[Card]) -> Dict[int, List[Card]]:
         rec = MultiRec(self.m - 1)
-        return rec.recognize_wo_ph(cards)
+        add_phx = lambda v: v if len(v)>= self.m else v + [phoenix]
+        return {k:add_phx(v) for k,v in rec.recognize_wo_ph(cards).items()}
 
-    def recognize_wo_ph(self, cards: Set[Card]) -> TPatternRecResult:
+    def recognize_wo_ph(self, cards: Set[Card]) -> Dict[int, List[Card]]:
         keyfunc = lambda card: card.rank
-        sorted_cards = sorted(cards, key=keyfunc)
+        nonspec = lambda card: card.special is None
+        sorted_cards = sorted(filter(nonspec, cards), key=keyfunc)
+
 
         if self.exact:
             matcher = lambda v: v == self.m
@@ -96,7 +102,9 @@ class MultiRec(TPatternRecognizer):
 
         # pairslist = {k: v for k, v in Counter(newlist).items() if matcher(v)}
 
-        return grouped
+        # return {k:TMulti(v) for k,v in grouped.items()}
+
+        return grouped;
 
         # print(Counter(newlist))
 

@@ -1,18 +1,8 @@
 import abc
-from dataclasses import dataclass
 from typing import Set, List
+
 from pychu.tlogic.tcards import Card
 from pychu.tpattern.pattern import TPattern
-
-
-@dataclass
-class TPatternRecResult:
-    unique: int
-    overlapping: int
-    patterns: Set[TPattern]
-
-    # def __str__(self):
-    #     return self.unique + ' / ' + self.overlapping + "\n" + self.patterns
 
 
 # Haha, to much java programming
