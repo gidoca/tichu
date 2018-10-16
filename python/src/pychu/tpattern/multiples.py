@@ -86,7 +86,7 @@ class MultiRec(TPatternRecognizer):
 
     def recognize_wo_ph(self, cards: Set[Card]) -> Dict[int, List[Card]]:
         keyfunc = lambda card: card.rank
-        nonspec = lambda card: card.special is None
+        nonspec = lambda card: card.special is not phoenix
         sorted_cards = sorted(filter(nonspec, cards), key=keyfunc)
 
 

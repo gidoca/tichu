@@ -2,14 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce7a56db-efcd-49c7-a0f2-8f691e9fdae7" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/python/src/pychu/tgame/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc/tichu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/doc/tichu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/src/pychu/tgame/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/src/pychu/tgame/server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/python/src/pychu/tgame/terminal.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/src/pychu/tgame/terminal.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/python/src/pychu/tpattern/multiples.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/src/pychu/tpattern/multiples.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/python/src/pychu/tplayer/humanplayer.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/src/pychu/tplayer/humanplayer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/src/pychu/tplayer/server.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/src/pychu/tgame/server.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/python/src/pychu/tplayer/stupidai.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/src/pychu/tplayer/stupidai.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/python/src/pychu/tplayer/terminal.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/src/pychu/tgame/terminal.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/python/src/pychu/tplayer/tplayer.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/src/pychu/tplayer/tplayer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/python/tests/tgame/test_tturns.py" beforeDir="false" afterPath="$PROJECT_DIR$/python/tests/tgame/test_tturns.py" afterDir="false" />
     </list>
@@ -36,25 +35,25 @@
           <entry key="" value="14" />
           <entry key="Python Console" value="270" />
           <entry key="coverage" value="1" />
-          <entry key="dummy" value="48" />
+          <entry key="dummy" value="53" />
           <entry key="md" value="6072" />
-          <entry key="py" value="97457" />
+          <entry key="py" value="118581" />
           <entry key="rst" value="146" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="6072" />
-          <entry key="PLAIN_TEXT" value="49" />
-          <entry key="Python" value="97741" />
+          <entry key="PLAIN_TEXT" value="54" />
+          <entry key="Python" value="118865" />
           <entry key="ReST" value="146" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Markdown" value="4" />
+          <entry key="Markdown" value="5" />
           <entry key="PLAIN_TEXT" value="1" />
-          <entry key="Python" value="297" />
+          <entry key="Python" value="312" />
           <entry key="PythonStub" value="2" />
           <entry key="ReST" value="1" />
           <entry key="XML" value="1" />
@@ -64,8 +63,8 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="coverage" value="1" />
-          <entry key="md" value="4" />
-          <entry key="py" value="297" />
+          <entry key="md" value="5" />
+          <entry key="py" value="312" />
           <entry key="pyi" value="2" />
           <entry key="rst" value="1" />
           <entry key="xml" value="1" />
@@ -75,35 +74,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/python/src/pychu/tgame/terminal.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="68" column="33" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
-              <folding>
-                <element signature="e#202#213#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/python/src/pychu/tgame/server.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret line="65" selection-start-line="65" selection-end-line="65" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/python/src/pychu/tplayer/stupidai.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+            <state relative-caret-position="184">
+              <caret line="39" selection-start-line="39" selection-end-line="39" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -112,13 +87,25 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/doc/overview.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="345">
-                <caret line="42" column="3" selection-start-line="42" selection-start-column="3" selection-end-line="42" selection-end-column="3" />
-              </first_editor>
-              <second_editor />
+        <entry file="file://$PROJECT_DIR$/python/src/pychu/tgame/server.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="78" selection-start-line="78" selection-end-line="78" />
+              <folding>
+                <element signature="e#0#11#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/python/src/pychu/tpattern/multiples.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="66">
+              <caret line="88" column="50" selection-start-line="88" selection-start-column="50" selection-end-line="88" selection-end-column="50" />
+              <folding>
+                <element signature="e#0#29#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -146,7 +133,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/tgame/terminal.py" />
         <option value="$PROJECT_DIR$/tlogic/thelpers.py" />
         <option value="$PROJECT_DIR$/tpattern/multiples.py" />
         <option value="$PROJECT_DIR$/tgame/stupidai.py" />
@@ -176,7 +162,6 @@
         <option value="$PROJECT_DIR$/python/src/pychu/tpattern/doublestraight.py" />
         <option value="$PROJECT_DIR$/python/src/pychu/tpattern/fullhouse.py" />
         <option value="$PROJECT_DIR$/python/src/pychu/tpattern/bombs.py" />
-        <option value="$PROJECT_DIR$/python/src/pychu/tplayer/humanplayer.py" />
         <option value="$PROJECT_DIR$/python/src/pychu/tstudies/fullhouse.py" />
         <option value="$PROJECT_DIR$/python/src/pychu/tplayer/server.py" />
         <option value="$PROJECT_DIR$/python/src/pychu/tpattern/straights.py" />
@@ -191,12 +176,14 @@
         <option value="$PROJECT_DIR$/python/tests/tpattern/test_multiples.py" />
         <option value="$PROJECT_DIR$/python/tests/tpattern/test_doublestraights.py" />
         <option value="$PROJECT_DIR$/doc/overview.md" />
-        <option value="$PROJECT_DIR$/python/tests/tgame/test_tturns.py" />
-        <option value="$PROJECT_DIR$/python/src/pychu/tplayer/stupidai.py" />
-        <option value="$PROJECT_DIR$/python/src/pychu/tpattern/multiples.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/python/tests/tgame/test_tturns.py" />
         <option value="$PROJECT_DIR$/python/src/pychu/tgame/terminal.py" />
+        <option value="$PROJECT_DIR$/python/src/pychu/tplayer/humanplayer.py" />
+        <option value="$PROJECT_DIR$/python/src/pychu/tplayer/tplayer.py" />
+        <option value="$PROJECT_DIR$/python/src/pychu/tplayer/stupidai.py" />
         <option value="$PROJECT_DIR$/python/src/pychu/tgame/server.py" />
+        <option value="$PROJECT_DIR$/python/src/pychu/tpattern/multiples.py" />
       </list>
     </option>
   </component>
@@ -250,6 +237,28 @@
             <path>
               <item name="tichu" type="b2602c69:ProjectViewProjectNode" />
               <item name="tichu" type="47feb1d3:ProjectViewModuleNode" />
+            </path>
+            <path>
+              <item name="tichu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tichu" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tichu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tichu" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pychu" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tichu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tichu" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tichu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tichu" type="47feb1d3:ProjectViewModuleNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="tgame" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -473,17 +482,17 @@
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24947146" />
       <window_info id="Structure" order="1" weight="0.24947146" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection Results" sideWeight="0.4918957" weight="0.3290653" />
+      <window_info anchor="bottom" id="Inspection Results" sideWeight="0.49119097" weight="0.3290653" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49753347" weight="0.3290653" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.77378434" weight="0.3277849" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.64411557" visible="true" weight="0.39692703" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.4947146" weight="0.3290653" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.77307963" weight="0.3277849" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.6412967" visible="true" weight="0.39692703" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="8" weight="0.3290653" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.35588443" side_tool="true" visible="true" weight="0.39692703" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.35870332" side_tool="true" visible="true" weight="0.39692703" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="right" x="0" y="0" width="310" height="673" id="Documentation" side_tool="true" weight="0.3297568" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -543,6 +552,11 @@
           <line>48</line>
           <option name="timeStamp" value="44" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/python/src/pychu/tgame/server.py</url>
+          <line>89</line>
+          <option name="timeStamp" value="68" />
+        </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
@@ -556,23 +570,37 @@
       </default-breakpoints>
     </breakpoint-manager>
   </component>
+  <component name="debuggerHistoryManager">
+    <expressions id="breakpointCondition">
+      <expression>
+        <expression-string>sum(pls) &lt; 4</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>pls &lt; 3</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>CODE_FRAGMENT</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>pls &lt; 4</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>pls&lt;4</expression-string>
+        <language-id>Python</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+    </expressions>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/tpattern/multiples.py" />
     <entry file="file://$PROJECT_DIR$/tgame/stupidai.py" />
     <entry file="file://$PROJECT_DIR$/source/implementation/tpattern/recresult.py" />
     <entry file="file://$PROJECT_DIR$/python/src/__init__.py" />
     <entry file="file://$PROJECT_DIR$/python/src/setup.py" />
     <entry file="file://$PROJECT_DIR$/python/src/pychu/tlogic/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/python/src/pychu/tplayer/tplayer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/python/src/pychu/tplayer/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
@@ -702,16 +730,6 @@
           <caret line="8" selection-start-line="8" selection-end-line="8" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/python/src/pychu/tplayer/humanplayer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="35" column="33" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -848,26 +866,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/doc/overview.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="345">
-            <caret line="42" column="3" selection-start-line="42" selection-start-column="3" selection-end-line="42" selection-end-column="3" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/python/tests/tgame/test_tturns.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="29" column="19" selection-start-line="29" selection-start-column="19" selection-end-line="29" selection-end-column="19" />
-          <folding>
-            <marker date="1539688496478" expanded="true" signature="316:1259" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/python/tests/tpattern/test_doublestraights.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -885,16 +883,6 @@
           <folding>
             <element signature="e#0#10#0" expanded="true" />
             <marker date="1539675192786" expanded="true" signature="2282:2573" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/python/src/pychu/tplayer/stupidai.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -925,20 +913,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python/src/pychu/tpattern/multiples.py">
+    <entry file="file://$PROJECT_DIR$/python/src/pychu/tlogic/thelpers.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="27" column="23" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+        <state relative-caret-position="45">
+          <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/src/pychu/tgame/proxyplayer.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/src/pychu/tplayer/tplayer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="60" column="23" selection-start-line="60" selection-start-column="23" selection-end-line="60" selection-end-column="23" />
           <folding>
-            <element signature="e#0#29#0" expanded="true" />
+            <element signature="e#0#35#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/doc/overview.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="345">
+            <caret line="42" column="3" selection-start-line="42" selection-start-column="3" selection-end-line="42" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/python/src/pychu/tlogic/tcards.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="143">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
+        <state relative-caret-position="242">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
             <marker date="1539619281376" expanded="true" signature="474:479" ph="..." />
@@ -947,29 +955,59 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python/src/pychu/tlogic/thelpers.py">
+    <entry file="file://$PROJECT_DIR$/python/tests/tgame/test_tturns.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="40" selection-start-line="3" selection-start-column="40" selection-end-line="3" selection-end-column="40" />
+        <state relative-caret-position="195">
+          <caret line="22" column="15" selection-start-line="22" selection-start-column="15" selection-end-line="22" selection-end-column="15" />
+          <folding>
+            <marker date="1539716840589" expanded="true" signature="322:1282" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python/src/pychu/tgame/server.py">
+    <entry file="file://$PROJECT_DIR$/python/src/pychu/tplayer/humanplayer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="65" selection-start-line="65" selection-end-line="65" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="45">
+          <caret line="3" column="34" lean-forward="true" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/python/src/pychu/tgame/terminal.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="68" column="33" selection-start-line="68" selection-start-column="33" selection-end-line="68" selection-end-column="33" />
+        <state relative-caret-position="313">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
           <folding>
-            <element signature="e#202#213#0" expanded="true" />
+            <element signature="e#156#177#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/src/pychu/tgame/server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="78" selection-start-line="78" selection-end-line="78" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/src/pychu/tplayer/stupidai.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/python/src/pychu/tpattern/multiples.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="88" column="50" selection-start-line="88" selection-start-column="50" selection-end-line="88" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>

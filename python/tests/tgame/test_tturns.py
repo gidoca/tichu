@@ -7,10 +7,10 @@
 
 # In order for this test to give valid result
 # the TPattern Classes must all work expectedly
-from pychu.tgame.terminal import TTurn
+from pychu.tgame.server import TTurn
 
 
-class TestTTurn:
+class TestTurnValidator:
 
     def test_rejection(self,cards):
         """
@@ -35,6 +35,8 @@ class TestTTurn:
         :param cards:
         :return:
         """
+
+class TestTurn:
 
     def test_win(self, cards):
         """

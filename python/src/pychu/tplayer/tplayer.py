@@ -2,7 +2,6 @@ from abc import ABC, abstractmethod
 from enum import Enum, auto
 from typing import Set, Callable
 
-from pychu.tgame.server import TEvent
 from pychu.tlogic.tcards import Card
 
 
@@ -27,11 +26,11 @@ class TPlayer(ABC):
 
     """
     def __init__(self):
-        self.cards = set()
+        self.hand = set()
         self.player_number = 0
 
     def init(self, cards: Set[Card], player_number: int ):
-        self.cards = set(cards)
+        self.hand = set(cards)
         self.player_number = player_number
 
     @abstractmethod
@@ -59,7 +58,7 @@ class TPlayer(ABC):
         """
 
 
-    def log(self, event : TEvent):
+    def log(self, event):
 
         """
         This enables a player to follow the course of the game.
