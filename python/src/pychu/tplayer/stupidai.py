@@ -1,9 +1,9 @@
 from typing import Set, Callable
 
 # noinspection PyUnresolvedReferences
-from tplayer.tplayer import TPlayer
 from pychu.tlogic.tcards import Card
 from pychu.tlogic.thelpers import rec_pattern_unique
+from pychu.tplayer.tplayer import TPlayer
 
 
 class StupidAI(TPlayer):

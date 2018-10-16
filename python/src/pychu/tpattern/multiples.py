@@ -1,10 +1,9 @@
 from itertools import groupby
+from typing import Set, Dict, List
 
 from pychu.tlogic.tcards import Card, phoenix, has_phoenix
 from pychu.tpattern.pattern import TPattern
-from pychu.tpattern.tpatternrecognizer import TPatternRecognizer, TPatternRecResult
-
-from typing import Set, Dict, List
+from pychu.tpattern.tpatternrecognizer import TPatternRecognizer
 
 
 class PassOrEmpty():
@@ -53,7 +52,7 @@ class TMulti(TPattern):
         mm = MultiRec(self.numberof, exact=exact)
         res = mm.recognize(cards, True)
 
-        return {k: TMulti(res[k]) for k in res if k > self.rank}
+        return {k: res[k] for k in res if k > self.rank}
 
     def __gt__(self, other):
         if isinstance(other, TMulti):

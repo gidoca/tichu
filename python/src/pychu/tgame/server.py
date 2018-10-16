@@ -3,7 +3,7 @@ from dataclasses import dataclass
 from enum import Enum, auto
 from typing import Set, List
 
-from pychu.tlogic.tcards import Card, tcard
+from pychu.tlogic.tcards import Card, tcard, mahjong
 from pychu.tlogic.thelpers import generate_deck
 
 
@@ -25,14 +25,12 @@ class TEventList(Enum):
 
 
 class TServerPlayer:
-    n: int
-    hand: Set[Card]
     # keep it flat or not?
-    stash: Set[Card]
 
-    def __init__(self, n, cards):
+    def __init__(self, n: int, cards: Set[Card]):
         self.n = n
         self.hand = set(cards)
+        self.stash = set()
 
     def finished(self):
         return not self.hand
@@ -47,12 +45,17 @@ class TServerPlayer:
         self.stash.update(cards)
 
     def hasMajong(self):
-        return tcard('ma') in self.hand
+        return mahjong in self.hand
+
 
 
 class TCardTable:
     """
     TCardTable keeps track of all the cards during a complete Round.
+    It distributes the cards at the beginning
+    checks if cards are valid (e.g. cheating over remote client)
+    Gives info who's is next
+
     """
 
     def __init__(self):
@@ -65,11 +68,10 @@ class TCardTable:
             oCards = shuffled_deck[s * 14:(s + 1) * 14]
             self.players.append(TServerPlayer(s, oCards))
 
-    def get_active_players(self):
+    @property
+    def active_players(self):
         pls = [not p.finished() for p in self.players]
         return sum(pls)
-
-    active_players = property(get_active_players)
 
     def plays(self, pid: int, cards: Set[Card]):
         player = self.players[pid]
@@ -86,6 +88,19 @@ class TCardTable:
             if player.hasMajong():
                 return i
         raise Exception("No majong available anymore")
+
+    def finished(self, pid):
+        return self.players[pid].finished()
+
+    def show_cards(self):
+        out = ''
+        for p in self.players:
+            out += "Hand: {} | Stash: {}\n".format(p.hand, p.stash)
+
+        return out
+
+
+
 
 
 @dataclass

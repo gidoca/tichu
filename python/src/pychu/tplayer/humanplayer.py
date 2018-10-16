@@ -1,7 +1,7 @@
 import sys
 from typing import Set
 
-from pychu.tplayer.server import TEvent
+from pychu.tgame.server import TEvent
 # noinspection PyUnresolvedReferences
 from pychu.tplayer.tplayer import TPlayer
 from pychu.tlogic.tcards import Card, tcards

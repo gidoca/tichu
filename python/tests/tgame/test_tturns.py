@@ -7,10 +7,12 @@
 
 # In order for this test to give valid result
 # the TPattern Classes must all work expectedly
-class TestTTurns:
+from pychu.tgame.terminal import TTurn
+
+
+class TestTTurn:
 
     def test_rejection(self,cards):
-
         """
         Give an invalid pattern of cards, e.g.::
 
@@ -25,6 +27,7 @@ class TestTTurns:
         :param cards:
         :return:
         """
+        tt = TTurn()
     def test_valid(self, cards):
         """
         Just give a list of valid patterns
