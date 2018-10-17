@@ -5,8 +5,9 @@ from dataclasses import dataclass
 from enum import Enum, auto
 from typing import Set, List, Dict, overload
 
-from pychu.tlogic.tcards import Card, mahjong, dog
-from pychu.tlogic.thelpers import generate_deck, rec_pattern_unique
+from pychu.tlogic.tcards import Card
+from pychu.tlogic.tcard_names import dog, generate_deck
+from pychu.tlogic.thelpers import rec_pattern_unique
 from pychu.tplayer.tplayer import TPlayer
 
 
@@ -213,12 +214,13 @@ class CardsValidator:
     played_cards_valid = []
     valid_move = False
 
-    def __init__(self, table_cards: List[Card], avail_cards):
+    def __init__(self, table_cards: List[Card], avail_cards, wish=None):
         self.table_cards = table_cards
         self.available_cards = avail_cards
+        self.wish = wish
 
-    def card_receiver(self, played_cards, ):
-        valid = self.check(played_cards, wish=None)
+    def card_receiver(self, played_cards ):
+        valid = self.check(played_cards, wish=self.wish)
         if valid:
             self.played_cards_valid = played_cards
             self.valid_move = True
@@ -227,4 +229,8 @@ class CardsValidator:
     def check(self, played_cards, wish=None, avail_cards=None):
         table_pattern = rec_pattern_unique(self.table_cards)
         played_pattern = rec_pattern_unique(played_cards)
+        # think about this. it looks nice on the first hand
+        # but on second thought a explicit implemenation of
+        # < > with a defined protocol if another pattern is involved
+        # could make more sense
         return played_pattern > table_pattern

@@ -1,4 +1,4 @@
-from pychu.tlogic.thelpers import generate_deck
+from pychu.tlogic.tcard_names import generate_deck
 from pychu.tstudies import fullhouse
 from pychu.tstudies import straights, bombs
 

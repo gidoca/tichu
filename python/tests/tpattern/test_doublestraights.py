@@ -6,9 +6,13 @@ from pychu.tlogic.tcards import tcards
 #Todo: general mixings for  testing?
 class TestDoubleStraights:
 
-    @mark.parametrize('')
+    @mark.parametrize('cards',[
+        'k2',
+        '',
+        'k2 g3'
 
-    def test_failing(self,c):
+    ])
+    def test_failing(self,cards):
         """
         Pattern that do not even have the necessary cards
         :param c:

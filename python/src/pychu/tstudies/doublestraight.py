@@ -1,4 +1,4 @@
-from pychu.tlogic.thelpers import generate_deck
+from pychu.tlogic.tcard_names import generate_deck
 from pychu.tpattern.doublestraight import DoubleStraightRec
 from pychu.tstudies.study import existence
 

@@ -7,12 +7,29 @@
 
 # In order for this test to give valid result
 # the TPattern Classes must all work expectedly
-from pychu.tgame.server import TTurn
+import pytest
+from pytest import mark
+
+from pychu.tgame.server import CardsValidator
+from pychu.tlogic.tcards import tcards
+from pychu.tlogic.tcard_names import *
 
 
 class TestTurnValidator:
 
-    def test_rejection(self,cards):
+    @pytest.fixture
+    def deck(self):
+        return generate_deck()
+
+    # todo:
+    @mark.parametrize('table,played', [
+        ({maj}, {k2, r2}),
+        ({phx}, {maj}),
+        ({drn}, {phx}),
+        ({k5,b5}, {r6}),
+        ({k7, r7}, {r9, g9, b9})
+    ])
+    def test_rejection(self, deck, table, played):
         """
         Give an invalid pattern of cards, e.g.::
 
@@ -27,14 +44,37 @@ class TestTurnValidator:
         :param cards:
         :return:
         """
-        tt = TTurn()
-    def test_valid(self, cards):
+        validator = CardsValidator(table, deck)
+        validator.card_receiver(played)
+        assert not validator.valid_move
+
+    @mark.parametrize('cards',[
+        tcards('k2 b2|g5 b5')
+    ])
+    def test_valid(self, cards, deck):
         """
         Just give a list of valid patterns
 
         :param cards:
         :return:
         """
+        table = cards[-2]
+        played = cards[-1]
+        validator = CardsValidator(table, deck)
+        validator.card_receiver(played)
+        assert validator.valid_move
+
+        @mark.parametrize('table,played,hand,wish,allowed', [
+            ([b2,g2,k2],[k3, b3, g3], [k3, b3, g3, phoenix],3,True),
+            ([b2,g2],[ b3, g3], [k3, b3, g3, phoenix],3,True),
+            ([b2,g2,k2],[k3, b3, g3], [k3, b3, g3, k5, g5, k5, phoenix],5,False),
+            ([b2,g2],[ b3, g3], [k3, b3, g3, g4, phoenix],4,False),
+        ])
+        def test_wish_allowed(table,played,hand,wish,allowed):
+            validator = CardsValidator(table,hand,wish)
+            validator.card_receiver()
+
+
 
 class TestTurn:
 

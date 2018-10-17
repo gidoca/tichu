@@ -1,9 +1,11 @@
 from itertools import groupby
 from typing import Set, Dict, List
 
-from pychu.tlogic.tcards import Card, phoenix, has_phoenix
+from pychu.tlogic.tcards import Card, has_phoenix
+from pychu.tlogic.tcard_names import phoenix
 from pychu.tpattern.pattern import TPattern
 from pychu.tpattern.tpatternrecognizer import TPatternRecognizer
+
 
 
 class PassOrEmpty():
@@ -56,7 +58,7 @@ class TMulti(TPattern):
 
     def __gt__(self, other):
         if isinstance(other, TMulti):
-            return self.numberof >= other.numberof and self.rank > other.rank
+            return self.numberof == other.numberof and self.rank > other.rank
         # Problem phoenix -> make a "TSingle" class?
         elif isinstance(other, PassOrEmpty):
             return True
@@ -111,7 +113,8 @@ class MultiRec(TPatternRecognizer):
 if __name__ == '__main__':
 
     # That is a looping import..
-    from pychu.tlogic.thelpers import generate_deck
+    from pychu.tlogic.tcard_names import generate_deck
+
     deck = generate_deck()
 
     pr = MultiRec()

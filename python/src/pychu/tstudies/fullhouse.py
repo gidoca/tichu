@@ -1,6 +1,6 @@
 import random as r
 # TODO: this could be merged with all the other functions based on the same iteration over the cards
-from pychu.tlogic.thelpers import generate_deck
+from pychu.tlogic.tcard_names import generate_deck
 from pychu.tpattern.fullhouse import FullhouseRec
 
 

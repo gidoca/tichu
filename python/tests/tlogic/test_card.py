@@ -2,11 +2,8 @@ import itertools
 
 from pytest import mark
 
-from pychu.tlogic.tcards import tcard, Color, Special, Card
-
-
-
-
+from pychu.tlogic.tcard_names import *
+from pychu.tlogic.tcards import tcard, Color, Special, Card, tcards
 
 ranks = map(str, range(2, 15))
 colors = 'rgbk'
@@ -20,10 +17,10 @@ print(card_strings)
 class TestCard():
 
     def test_set_capabilities(self):
-        l = tcard('g2 k2 ma ph')
+        l = tcards('g2 k2 ma ph')
         s1 = set(l)
         s1.remove(tcard('g2'))
-        s2 = set(tcard('k2 ma ph'))
+        s2 = set(tcards('k2 ma ph'))
         assert s1 == s2
 
     @mark.parametrize('c', card_strings)
@@ -44,5 +41,21 @@ class TestCard():
     def test_special(self, special):
         c = Card(special=special)
         assert special == c.special
-        assert 2 >= c.rank > 14
+        assert special.value == c.rank
+        # assert 2 >= c.rank > 14
+
+
+    @mark.parametrize('multi,exp', [
+        ('r2 g2',[r2, g2]),
+        ('r14 g14 b14 k14', [r14, g14, b14, k14]),
+        ('ph r14 g14 dog b14 k14 drn', [phoenix, r14, g14, dog, b14, k14, drn]),
+        ('rg2',[r2, g2]),
+        ('rgbk14', [r14, g14, b14, k14]),
+        ('kg11 rb10', [k11, g11, r10, b10]),
+        ('ph ma kg11 dog rb10', [phoenix, mahjong, k11, g11, dog, r10, b10])
+    ])
+    def test_multi(self,multi,exp):
+        cards = tcards(multi)
+        assert exp == cards
+
 

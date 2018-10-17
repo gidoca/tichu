@@ -6,6 +6,7 @@
 from enum import Enum
 
 from pychu.tgame.server import TRound
+from pychu.tplayer.humanplayer import HumanPlayer
 from pychu.tplayer.stupidai import StupidAI
 
 
@@ -19,7 +20,7 @@ def terminal():
     print('Welcome to Pichu'
           'Listen and repeat...')
 
-    players = [StupidAI(), StupidAI(), StupidAI(), StupidAI()]
+    players = [HumanPlayer(), StupidAI(), StupidAI(), StupidAI()]
 
     tround = TRound(players)
     tround.start()

@@ -3,7 +3,7 @@ from typing import Callable, Set
 
 from pychu.tlogic.tcards import Card
 # TODO: refactor into testfunctions?
-from pychu.tlogic.thelpers import generate_deck
+from pychu.tlogic.tcard_names import generate_deck
 from pychu.tpattern.straights import StraightRec
 from pychu.tstudies.straights import street_any_hand
 

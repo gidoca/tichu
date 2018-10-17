@@ -3,7 +3,7 @@ import random as r
 
 # TODO: this is logic
 # -> replace by multiples rec.
-from pychu.tlogic.thelpers import generate_deck
+from pychu.tlogic.tcard_names import generate_deck
 from pychu.tpattern.bombs import find_bombs
 
 

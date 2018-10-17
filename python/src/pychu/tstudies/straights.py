@@ -1,7 +1,7 @@
 import random as r
 
 # TODO: refactor into testfunctions?
-from pychu.tlogic.thelpers import generate_deck
+from pychu.tlogic.tcard_names import generate_deck
 from pychu.tpattern.straights import StraightRec
 from pychu.tstudies.study import existence
 

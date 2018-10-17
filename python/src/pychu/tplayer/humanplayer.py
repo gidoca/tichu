@@ -30,16 +30,17 @@ class HumanPlayer(TPlayer):
                         "Your Cards: {}\n".format(lastcards or '{}', sorted(self.hand, key=lambda c: c.rank)))
             try:
                 if inp == "pass" or inp == "p":
+                    print( 'You pass...')
                     cards = []
                 else:
                     cards = tcards(inp)
 
-                validpattern = cards_validator(cards, self.hand)
+                validpattern = cards_validator(cards)
 
 
-            except:
+            except Exception as e:
                 print(sys.exc_info())
-                print("'{}' is invalid! Try again!")
+                print("'{}' is invalid! Try again!".format(e))
 
         self.hand.difference_update(cards)
 

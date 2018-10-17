@@ -3,6 +3,8 @@ from typing import Iterable, Union, List
 
 
 # todo: rename-> tcolor (avoids possible problems with GUI and stuff later on)
+
+
 class Color(Enum):
     """
     Represents the Tichu color scheme:
@@ -25,9 +27,9 @@ class Color(Enum):
 
 class Special(Enum):
     mahjong = 1, 'maj'
-    dog = 2, 'dog'
-    dragon = 3, 'drn'
-    phoenix = 4, 'phx'
+    dog = 0, 'dog'
+    dragon = 15, 'drn'
+    phoenix = '+.5', 'phx'
 
     def __new__(cls, value, short: str):
         special = object.__new__(cls)
@@ -57,6 +59,8 @@ class Card:
         else:
             o = object.__new__(cls)
             object.__setattr__(o, 'special', special)
+            if special:
+                rank = special.value
             super(Card,o).__setattr__('rank', rank)
             super(Card,o).__setattr__('color', color)
             Card.__tichu_dict__[id_str] = o
@@ -87,6 +91,9 @@ def has_phoenix(cards):
 
 
 def tcard(card_str: str) -> Card:
+    # otherwise there would be a circular import, sigh.
+    # one thing that was easier in java ;-)
+    from pychu.tlogic.tcard_names import dog, dragon, phoenix, mahjong
     if card_str.startswith('dr'):
         return dragon
     elif card_str.startswith('ph'):
@@ -96,34 +103,53 @@ def tcard(card_str: str) -> Card:
     elif card_str.startswith('do'):
         return dog
     else:
-        color = mapcolor(card_str[0])
+        color = Color(card_str[0])
         rank = int(card_str[1:])
         return Card(color=color, rank=rank);
 
 
+
 def tcards(param: Union[str, Iterable[str]]) -> List[Card]:
     """
-
     :param param:  String separated by space or iterable of strings
-
     :return:
     """
     if isinstance(param, str):
         if param == '':
             return []
+        if '|' in param:
+            groups = param.strip().split('|')
+            return list(map(tcards, groups)) # recursion :)
+
         cardstrings = param.strip().split(' ')
     else:
         cardstrings = param
-    cards = list(map(tcard, cardstrings))
+    cards = [out for a in cardstrings for out in __tcard__(a)]
     return cards
 
 
-def mapcolor(color: str) -> Color:
-    return Color(color)
+def __tcard__(inp: str) -> List[Card]:
+    """
+    Helper function to unpack
+    :return: 
+    """
+    import re
+
+    match = re.match(r'([rgbk]{1,4})(\d{1,2})', inp)
+
+    if match:
+        rank = match.group(2)
+        return (tcard(color+rank) for color in match.group(1))
+    else:
+        return (tcard(inp),)
 
 
-dragon = Card(special=Special.dragon, rank=18)
-# That will be problematic when played onto a single card
-phoenix = Card(special=Special.phoenix, rank=17)
-mahjong = Card(special=Special.mahjong, rank=1)
-dog = Card(special=Special.dog, rank=-2)
+
+
+
+
+
+
+
+
+
