@@ -2,12 +2,12 @@ import random as r
 
 # TODO: refactor into testfunctions?
 from pychu.tlogic.tcard_names import generate_deck
-from pychu.tpattern.straights import StraightRec
+from pychu.tpattern.straights import TStraightFinder
 from pychu.tstudies.study import existence
 
 
 def street_any_hand(deck, ph=False):
-    pr = StraightRec()
+    pr = TStraightFinder()
 
     return existence(deck, pr.recognize, "Straight", ph)
 
@@ -21,13 +21,13 @@ def street_my_hand(deck):
         shuffled_deck = r.sample(deck, 56)
         myCards = shuffled_deck[:14]
         myCards.sort(key=lambda x: x.height)
-        isMyStraight = StraightRec._find_straight_(myCards)
+        isMyStraight = TStraightFinder._find_straight_(myCards)
         # print ("Straight?", straights)
         otherStraight = False
         for s in range(1,4):
             oCards = shuffled_deck[s*14:(s+1)*14]
             oCards.sort(key=lambda x: x.height)
-            oStraights = StraightRec._find_straight_(oCards)
+            oStraights = TStraightFinder._find_straight_(oCards)
             otherStraight = otherStraight or oStraights
             # print (s,oStraights)
 

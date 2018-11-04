@@ -1,11 +1,11 @@
 import random as r
 # TODO: this could be merged with all the other functions based on the same iteration over the cards
 from pychu.tlogic.tcard_names import generate_deck
-from pychu.tpattern.fullhouse import FullhouseRec
+from pychu.tpattern.fullhouse import FullhouseMatch
 
 
 def full_house_myhand(deck, ph=False):
-    pr = FullhouseRec
+    pr = FullhouseMatch
     k=10000
     found = 0; found2Hands = 0; found3Hands = 0; found4hands = 0
     for i in range(k):

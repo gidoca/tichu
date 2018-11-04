@@ -2,8 +2,11 @@ from typing import Set, Callable
 
 # noinspection PyUnresolvedReferences
 from pychu.tlogic.tcards import Card
-from pychu.tlogic.thelpers import rec_pattern_unique
-from pychu.tpattern.multiples import MultiRec
+from pychu.tlogic.thelpers import ident_pattern_unique
+from pychu.tpattern.fullhouse import TFullHouseFinder
+from pychu.tpattern.multiples import TMultiFinder, TMultiFinder
+from pychu.tpattern.straights import TStraightFinder
+from pychu.tpattern.tdoublestraight import TDoubleStraight, TDoubleStraightFinder
 from pychu.tplayer.tplayer import TPlayer
 
 
@@ -21,8 +24,8 @@ class StupidAI(TPlayer):
         self.hand.difference_update(cards)
 
     def react(self, table_cards):
-        pattern = rec_pattern_unique(table_cards)
-        possible_cards = pattern.find(self.hand)
+        pattern = ident_pattern_unique(table_cards)
+        possible_cards, unusable_cards = pattern.find(self.hand)
         try:
             first = next(iter(possible_cards))
 
@@ -35,12 +38,19 @@ class StupidAI(TPlayer):
         return cards
 
     def start(self):
-        triples = MultiRec(3, True).recognize(self.hand)
-        pairs = MultiRec(2, True).recognize(self.hand)
-        singles = MultiRec(1, True).recognize(self.hand)
+
+        doublestr = TDoubleStraightFinder().recognize(self.hand, True)
+        straights = TStraightFinder().recognize(self.hand, True)
+        fh = TFullHouseFinder().recognize(self.hand,True)
+
+        triples, l3 = TMultiFinder(3, True).recognize(self.hand)
+        pairs, l2 = TMultiFinder(2, True).recognize(self.hand)
+        singles, l1 = TMultiFinder(1, True).recognize(self.hand)
         tmin = min(triples.items()) if triples else (100,set())
         pmin = min(pairs.items()) if pairs else (99,set())
         smin = min(singles.items()) if singles else (98,set())
+
+
 
         cards = min((tmin,pmin,smin))
 

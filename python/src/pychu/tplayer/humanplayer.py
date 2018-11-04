@@ -1,9 +1,13 @@
 import sys
 from typing import Set
 
+from prompt_toolkit import prompt
+
+from pychu.tgame.lexer import RainbowLexer, TichuLexer
 from pychu.tgame.server import TEvent
 from pychu.tplayer.tplayer import TPlayer
 from pychu.tlogic.tcards import Card, tcards
+from prompt_toolkit import print_formatted_text as print
 
 
 class HumanPlayer(TPlayer):
@@ -18,16 +22,15 @@ class HumanPlayer(TPlayer):
 
     def play(self, lastcards: Set[Card], cards_validator):
         """
-
-
         :rtype: Set[Card]
         :param lastcards:
         """
-        validpattern = False
-        while not validpattern:
-            inp = input("What would you like to play on {}\n"
+        validpattern = None
+        while validpattern is None:
+            inp = prompt("What would you like to play on {}\n"
                         "Write 'pass' for pass\n"
-                        "Your Cards: {}\n".format(lastcards or '{}', sorted(self.hand, key=lambda c: c.rank)))
+                        "Your Cards: {}\n".format(lastcards or '{}', sorted(self.hand, key=lambda c: c.rank)),
+                         lexer=TichuLexer())
             try:
                 if inp == "pass" or inp == "p":
                     print( 'You pass...')
@@ -36,7 +39,8 @@ class HumanPlayer(TPlayer):
                     cards = tcards(inp)
 
                 validpattern = cards_validator(cards)
-
+                if validpattern is None:
+                    print("Invalid pattern, try again...")
 
             except Exception as e:
                 print(sys.exc_info())

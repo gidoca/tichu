@@ -1,4 +1,5 @@
 from enum import Enum
+from numbers import Number
 from typing import Iterable, Union, List
 
 
@@ -25,11 +26,34 @@ class Color(Enum):
         return self.value
 
 
+class PHeight:
+    def __gt__(self, other):
+        if isinstance(other, Number):
+            return other-14.1 > 0
+        else:
+            return False
+
+    def __eq__(self, other):
+        return False
+
+    def __lt__(self, other):
+        if isinstance(other, Number):
+            return other-14.1 > 0
+        else:
+            return False
+    def __hash__(self):
+        return 14.1.__hash__()
+
+    __str__ = lambda x: 'x'
+
+
 class Special(Enum):
+
     mahjong = 1, 'maj'
-    dog = 0, 'dog'
+    dog = 0.5, 'dog' # zero gives False in python
     dragon = 15, 'drn'
-    phoenix = '+.5', 'phx'
+
+    phoenix = PHeight(), 'phx' # this is a placeholder
 
     def __new__(cls, value, short: str):
         special = object.__new__(cls)
@@ -53,14 +77,14 @@ class Card:
 
     def __new__(cls, color=None, rank=None, special=None):
 
+        if special and not rank:
+            rank = special.value
         id_str = Card._id_(color, rank, special)
         if id_str in Card.__tichu_dict__:
             return Card.__tichu_dict__[id_str]
         else:
             o = object.__new__(cls)
             object.__setattr__(o, 'special', special)
-            if special:
-                rank = special.value
             super(Card,o).__setattr__('rank', rank)
             super(Card,o).__setattr__('color', color)
             Card.__tichu_dict__[id_str] = o
@@ -73,6 +97,11 @@ class Card:
     def _id_(color=None, rank=None, special=None):
         if special is None:
             return str(color) + str(rank)
+        # Wrapped single phoenix
+        # The alternative would be to just make the pattern
+        # AAAARG...
+        elif special == Special.phoenix and rank:
+            return str(special) + str(rank)
         else:
             return str(special)
 
@@ -84,10 +113,8 @@ class Card:
 
 
 def has_phoenix(cards):
-    for card in cards:
-        if card.special == Special.phoenix:
-            return card
-    return None
+    from pychu.tlogic.tcard_names import phoenix
+    return phoenix in cards
 
 
 def tcard(card_str: str) -> Card:
@@ -143,6 +170,15 @@ def __tcard__(inp: str) -> List[Card]:
     else:
         return (tcard(inp),)
 
+if __name__ == '__main__':
+    from pychu.tlogic.tcard_names import b4, b3, k2, phoenix
+
+    li = [k2, k2, b3, b4, b4]
+    print (li)
+
+    print(k2 in li)
+
+    print (tcard('k2') in li)
 
 
 

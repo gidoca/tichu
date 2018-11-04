@@ -1,16 +1,16 @@
-from typing import Set
-
-from pychu.tlogic.tcards import Card
-from pychu.tpattern.pattern import TPattern
+from pychu.tpattern.tpattern import TPattern
 
 
 class PFullHouse(TPattern):
+    """
+    There is only one (not unique fullhouse) in a set of card
+    """
     def __init__(self, triple: TPattern, pair: TPattern):
         self.triple = triple
         self.pair = pair
 
-    def getCards(self) -> Set[Card]:
-        return self.triple.getCards + self.pair.getCards
+
+
 
 
 

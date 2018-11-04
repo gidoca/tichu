@@ -1,25 +1,19 @@
+from __future__ import annotations
 from itertools import groupby
 from typing import Set, Dict, List
 
-from pychu.tlogic.tcards import Card, has_phoenix
 from pychu.tlogic.tcard_names import phoenix
-from pychu.tpattern.pattern import TPattern
-from pychu.tpattern.tpatternrecognizer import TPatternRecognizer
-
-
-
-class PassOrEmpty():
-    def __init__(self):
-        pass
-
-    def __gt__(self, other):
-        if isinstance(other, TPattern):
-            return True
-        else:
-            return False
+from pychu.tlogic.tcards import Card, has_phoenix
+from pychu.tpattern.tpattern import TPattern, TPatternEmpty
 
 
 class TMulti(TPattern):
+
+    cardinality = None
+    rank = None
+    essential_cards = None
+    redundant_cards = None
+
     def __init__(self, cards):
         self.cards = cards
         if not cards:
@@ -33,7 +27,7 @@ class TMulti(TPattern):
         for c in cards:
             if c.__eq__(phoenix):
                 phx = True
-            elif prev_rank and prev_rank != c.rank:
+            elif prev_rank is not None and prev_rank != c.rank:
                 # todo accept phoenix
                 raise ValueError("All heights must be the same")
             else:
@@ -43,38 +37,54 @@ class TMulti(TPattern):
         self.rank = prev_rank
 
         if cnt_wo_phx < 3:
-            self.numberof = cnt_wo_phx + phx
+            self.cardinality = cnt_wo_phx + phx
         else:
-            self.numberof = cnt_wo_phx
+            self.cardinality = cnt_wo_phx
+
 
     def __repr__(self):
-        return "{}@{}:{}".format(self.numberof, self.rank, self.cards)
+        return "{}@{}:{}".format(self.cardinality, self.rank, self.cards)
 
-    def find(self, cards, higher=True, exact=True):
-        mm = MultiRec(self.numberof, exact=exact)
-        res = mm.recognize(cards, True)
+    def find(self, cards, higher=True):
+        mm = TMultiFinder(self.cardinality, False)
+        res, left = mm.recognize(cards, True)
 
-        return {k: res[k] for k in res if k > self.rank}
+        return {k: res[k] for k in res if k > self.rank}, left
 
     def __gt__(self, other):
         if isinstance(other, TMulti):
-            return self.numberof == other.numberof and self.rank > other.rank
+            return self.cardinality == other.cardinality and self.rank > other.rank
         # Problem phoenix -> make a "TSingle" class?
-        elif isinstance(other, PassOrEmpty):
+        elif isinstance(other, TPatternEmpty):
             return True
         else:
             return False
 
 
-class MultiRec(TPatternRecognizer):
-    def __init__(self, m: int, exact=False):
-        self.m = m;
-        self.exact = exact;
 
-    #todo: phoenix=True makes more sense
-    #todo: add greedy flag (now the phx is only used when needed)
-    #todo: is m needed?
-    def recognize(self, cards: Set[Card], phoenix=False) -> Dict[int, List[Card]]:
+
+
+
+
+
+
+
+
+# hm, create a plain function?
+# Not sure if multifinding in stead of fix finders for 1,2,3,4 makes life any easier.
+
+class TMultiFinder():
+
+    # TODO: Greedy flag
+    # Howto handle phoenix?
+    # REdesign exact flag into rather make num a range...
+    def __init__(self, num: int, exact: bool):
+        self.m = num
+        self.exact = exact
+
+
+    def recognize(self, cards: Set[Card], phoenix=True) -> (Dict[int, List[Card]], Set[Card]):
+
         # do we count now
         if has_phoenix(cards):
             return self.recognize_ph(cards)
@@ -82,9 +92,20 @@ class MultiRec(TPatternRecognizer):
             return self.recognize_wo_ph(cards)
 
     def recognize_ph(self, cards: Set[Card]) -> Dict[int, List[Card]]:
-        rec = MultiRec(self.m - 1)
+        #TODO: also check m (without phoenix)
+        rec = TMultiFinder(self.m, self.exact)
         add_phx = lambda v: v if len(v)>= self.m else v + [phoenix]
-        return {k:add_phx(v) for k,v in rec.recognize_wo_ph(cards).items()}
+        ca_wo_ph = list(cards); ca_wo_ph.remove(phoenix)
+        vals, leftovers = rec.recognize_wo_ph(ca_wo_ph)
+        if vals:
+            if self.exact:
+                return vals, leftovers
+            else:
+                return {k:add_phx(v) for k,v in vals.items()}, leftovers
+        else:
+            rec = TMultiFinder(self.m-1, self.exact)
+            vals, leftovers = rec.recognize_wo_ph(ca_wo_ph)
+            return {k:add_phx(v) for k,v in vals.items()}, leftovers
 
     def recognize_wo_ph(self, cards: Set[Card]) -> Dict[int, List[Card]]:
         keyfunc = lambda card: card.rank
@@ -101,21 +122,13 @@ class MultiRec(TPatternRecognizer):
 
         grouped = {k: v for k, v in grouped_raw.items() if matcher(len(v))}
 
+
+        leftovers = [o for k,v in grouped_raw.items() if not matcher(len(v)) for o in v]
         # pairslist = {k: v for k, v in Counter(newlist).items() if matcher(v)}
 
         # return {k:TMulti(v) for k,v in grouped.items()}
 
-        return grouped;
-
-        # print(Counter(newlist))
+        return grouped, leftovers;
 
 
-if __name__ == '__main__':
 
-    # That is a looping import..
-    from pychu.tlogic.tcard_names import generate_deck
-
-    deck = generate_deck()
-
-    pr = MultiRec()
-    pr.recognize(deck)

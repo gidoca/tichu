@@ -1,34 +1,44 @@
-from typing import Set, Collection
+from typing import Set, Collection, List
 
+from boltons.setutils import IndexedSet
+
+from pychu.tlogic.tcard_names import dog, phoenix
 from pychu.tlogic.tcards import Card, Special, has_phoenix
-from pychu.tpattern.multiples import PassOrEmpty
-from pychu.tpattern.pattern import TPattern
-from pychu.tpattern.tpatternrecognizer import TPatternRecognizer, TPatternRecResult
+from pychu.tpattern.tpattern import TPattern, TPatternEmpty
+from pychu.tpattern.tpatternfinder import TPatternFinder
 
 
 class TStraight(TPattern):
 
+    cardinality = None
+    rank = None
+    redundant_cards = None
+    essential_cards = None
+
     def __init__(self, cards: Collection[Card]):
-        self.cards = cards
+        self.cards: IndexedSet = IndexedSet(cards)
         le = len(cards)
         if le < 5:
             raise ValueError('At least five cards are needed for a '
                              'straight. Only {} were given'.format(le))
+        if dog in cards:
+            raise ValueError('Dog not usable in Patterns')
 
-        self.numcards = len(cards)
+        self.cardinality = len(cards)
 
         # Check consistency of given cards!
 
-        sorted_cards = sorted(cards, key=lambda card: card.rank)
+        sorted_cards = sorted(cards, key=Card.rank)
         sorted_cards_iter = iter(sorted_cards)
         first_card = next(sorted_cards_iter)
-        self.lowest = first_card.rank
-        phx = has_phoenix(sorted_cards)
+        self.rank = first_card.rank
+        phx_avail = has_phoenix(sorted_cards)
 
         redundant_ranks = []
         self.phx_rank = None
 
-        last_rank = self.lowest
+        last_rank = self.rank
+        buf = []
         for current_card in sorted_cards_iter:
             if current_card.special == Special.phoenix:
                 continue
@@ -37,128 +47,120 @@ class TStraight(TPattern):
                 redundant_ranks.append(current_card.rank)
             elif diff == 1:
                 last_rank = current_card.rank
-            elif diff == 2 and phx:
-                phx = False
+            elif diff == 2 and phx_avail:
+                phx_avail = False
                 last_rank = current_card.rank
             else:
                 raise ValueError("Inconsistent Straight")
 
         # if phx was not used to build the straight
         # it can make the straight longer
-        if phx:
+        if phx_avail:
             # append phx to the end (if not already ace)
             if last_rank < 14:
                 last_rank += 1
                 self.phx_rank = last_rank
-            elif self.lowest > 2:
-                self.lowest -= 1
-                self.phx_rank = self.lowest
+            elif self.rank > 2:
+                self.rank -= 1
+                self.phx_rank = self.rank
 
+        self.redundant_cards = []; self.essential_cards = []
+        for c in cards:
+            if c.rank in redundant_ranks:
+                self.redundant_cards.append(c)
+            else:
+                self.essential_cards.append(c)
         self.highest = last_rank
+        self.cardinality = self.highest - self.rank + 1
 
-    def find(self, cards, higher=True, exact=True):
-        pass
+    def find(self, cards, higher=True):
+        pr = TStraightFinder()
+        rec = pr.recognize(cards, True)
+        out = [st for st in map(TStraight, rec) if st.gt_hand(self)]
 
-    # general question: raise error or just return false?
-    def __gt__(self, other):
+        return out
+
+    def __eq__(self, other):
+        if(isinstance(other, TStraight)):
+            if other.cards == self.cards:
+                return True
+        return False
+
+
+    def gt_table(self, other: TPattern):
         if isinstance(other, TStraight):
-            if other.numcards > self.numcards:
+            if other.cardinality != self.cardinality:
                 return False
             else:
                 return self.highest > other.highest
         # Maybe this is too complicated
-        elif isinstance(other, PassOrEmpty):
+        elif isinstance(other, TPatternEmpty):
             return True
         else:
             return False
-            # todo
-            # raise ValueError("Different Patter - Not comparable")
+
+    def gt_hand(self, other: TPattern):
+        if isinstance(other, TStraight):
+            if self.cardinality < other.cardinality:
+                return False
+            else:
+                return self.highest > other.highest
+
+        elif isinstance(other, TPatternEmpty):
+            return True
+        else:
+            return False
 
 
-class StraightRec(TPatternRecognizer):
+
+class TStraightFinder(TPatternFinder):
 
     @classmethod
-    def recognize(self, cards: Set[Card], phoenix=True) -> bool:
-
-        if (phoenix):
-            return StraightRec.__find_straight_phoenix__(cards)
-        else:
-            return StraightRec._find_straight_(cards)
+    def recognize(self, cards: Set[Card], phoenix=True) -> List[TPattern]:
+        return TStraightFinder.__find_straight_phoenix__(cards)
 
     @staticmethod
-    def __find_straight_phoenix__(cards):
-        buffer = []
+    def __find_straight_phoenix__(c):
+        cards = list(c)
         out = []
-        first = True
-        phoenix = has_phoenix(cards)
-        phoenix_used = False
-        phoenix_pos = -2
-        i = 0
+        i = 1;
+        phx_avail = has_phoenix(cards)
+        if phx_avail:
+            cards.remove(phoenix)
+        lastcard = cards[0]
+        buffer = [lastcard]
+        rank = lastcard.rank
         while i < len(cards):
             card = cards[i]
-            if first:
-                first = False
-                buffer.append(card)
-            else:
-                if (lastcard.rank - card.rank) == -2:
-                    if phoenix is not None and not phoenix_used:
-                        buffer.append(phoenix)
-                        buffer.append(card)
-                        phoenix_used = True
-                        phoenix_pos = i - 1
-                    else:
-                        if len(buffer) >= 5:
-                            # print "straight!"
-                            out.append(buffer)
-                        # print buffer, "reset"
-                        if phoenix_used: i = phoenix_pos
-                        phoenix_used = False
-                        buffer = [card, ]
-
-                elif (lastcard.rank - card.rank) == -1:
+            if card == phoenix:
+                i+=1; continue
+            if (card.rank - lastcard.rank) == 2:
+                if phx_avail:
+                    buffer.append(phoenix)
                     buffer.append(card)
-                # print "appending", card
-                elif (lastcard.rank - card.rank) == 0:
-                    #                    print "pass"
-                    pass
                 else:
                     if len(buffer) >= 5:
-                        # print "straight!"
-                        # todo create new Straight object
                         out.append(buffer)
                     # print buffer, "reset"
-                    if phoenix_used: i = phoenix_pos
-                    phoenix_used = False
                     buffer = [card, ]
+
+            elif (card.rank - lastcard.rank) == 1:
+                buffer.append(card)
+            # print "appending", card
+            elif (card.rank - lastcard.rank) == 0:
+                # redundant card
+                pass
+            else:
+                if len(buffer) >= 5:
+                    out.append( buffer)
+                # print buffer, "reset"
+                buffer = [card]
+                rank = card.rank
 
             lastcard = card
             i += 1
-        length = len(out)
-        # without phoenix a
-        return TPatternRecResult(length, length, out)
+        if len(buffer) >= 5:
+            out.append( buffer)
 
-    @staticmethod
-    def _find_straight_(cards):
-        buffer = []
-        out = []
-        first = True
-        for card in cards:
-            if first:
-                first = False
-                buffer.append(card)
-            else:
-                #                print lastcard.rank, card.rank
-                if (lastcard.rank - card.rank) == -1:
-                    buffer.append(card)
-                # print "appending", card
-                elif (lastcard.rank - card.rank) == 0:
-                    #                    print "pass"
-                    pass
-                else:
-                    if len(buffer) >= 5:
-                        # print "straight!"
-                        out.append(buffer)
-                    # print buffer, "reset"
-                    buffer = [card, ]
-            lastcard = card
         return out
+

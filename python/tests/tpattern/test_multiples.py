@@ -3,7 +3,7 @@ import sys
 import pytest
 from pytest import mark
 
-from pychu.tpattern.multiples import MultiRec, TMulti
+from pychu.tpattern.multiples import TMultiFinder, TMulti
 
 print(sys.path)
 print(sys.executable)
@@ -14,14 +14,14 @@ from pychu.tlogic.tcards import tcards
 class TestMultiRec():
     def test_4simple(self):
         cards = tcards('k2 r2 b2 g2')
-        pr = MultiRec(4)
-        out = pr.recognize(cards)
+        pr = TMultiFinder(4,True)
+        out, le = pr.recognize(cards)
         assert {2:(cards)} == out
 
     def test_4simpleph(self):
         cards = tcards('k2 r2 b2 b3')
-        pr = MultiRec(4)
-        out = pr.recognize(cards)
+        pr = TMultiFinder(4,True)
+        out, le = pr.recognize(cards)
         assert out == {}
 
     def test_trix2(self):
@@ -29,34 +29,34 @@ class TestMultiRec():
         tri3 = tcards('r3 g3 b3')
         distraction = tcards('g5 b8 r9 k10 k11 k13')
         cards = distraction + tri2 + tri3
-        pr = MultiRec(3)
-        out = pr.recognize(cards)
+        pr = TMultiFinder(3, True)
+        out, le = pr.recognize(cards)
         pytest.assume(len(out) == 2)
         pytest.assume(tri2 == out[2])
         pytest.assume(tri3 == out[3])
 
     def test_3fail(self):
         cards = tcards('k2 r2 b3 g3')
-        pr = MultiRec(3)
-        out = pr.recognize(cards)
+        pr = TMultiFinder(3, True)
+        out, le = pr.recognize(cards)
         assert out == {}
 
     def test_2x2(self):
         cards = tcards('k2 r2 b3 g3')
-        pr = MultiRec(2)
-        out = pr.recognize(cards)
+        pr = TMultiFinder(2, True)
+        out, le = pr.recognize(cards)
         assert out == {2:(tcards('k2 r2')), 3:(tcards('b3 g3'))}
 
     def test_2ph(self):
         cards = tcards('k2 g2 ph b3 g3')
-        pr = MultiRec(2)
-        out = pr.recognize(cards, True)
+        pr = TMultiFinder(2, True)
+        out, le = pr.recognize(cards, True)
         assert {2:(tcards('k2 g2')), 3:(tcards('b3 g3'))} == out
 
     def test_3ph(self):
         cards = tcards('k2 g2 ph b3 g3')
-        pr = MultiRec(3)
-        out = pr.recognize(cards, True)
+        pr = TMultiFinder(3, False)
+        out, le = pr.recognize(cards, True)
         assert {2:(tcards('k2 g2 ph')), 3:(tcards('b3 g3 ph'))} == out
 
     @mark.parametrize('c1,c2,exp', [
@@ -72,17 +72,15 @@ class TestMultiRec():
     def test_compare(self, c1, c2, exp):
         m1 = TMulti(tcards(c1))
         m2 = TMulti(tcards(c2))
-        assert (m2 > m1) is exp
+        assert m2.gt_table(m1) is exp
 
     @mark.parametrize('c', [
         'k2 r2 b3 ph',
         'do r4',
         'k2 r2 g4',
         '',
-        {2: 'sdf'},
-        'asfdas',
-        23
-
+        'g4 drn',
+        'g5 r7',
     ])
     def test_illegal_multi(self, c):
         with pytest.raises(ValueError):
@@ -100,8 +98,8 @@ class TestMultiRec():
         cards = tcards(c)
         tm = TMulti(cards)
         assert rank == tm.rank
-        assert numberof == tm.numberof
+        assert numberof == tm.cardinality
 
-    
+
 
 

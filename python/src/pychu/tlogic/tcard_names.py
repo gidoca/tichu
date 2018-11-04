@@ -3,17 +3,17 @@ from typing import List
 from pychu.tlogic.tcards import Card, Special, tcard, Color
 
 # TODO: maybe move to its own file
-drn = dragon = Card(special=Special.dragon, rank=18)
+dog = Card(special=Special.dog)
+drn = dragon = Card(special=Special.dragon)
 # That will be problematic when played onto a single card
-phx = phoenix = Card(special=Special.phoenix, rank=17)
-maj = mahjong = Card(special=Special.mahjong, rank=1)
+phx = phoenix = Card(special=Special.phoenix)
+maj = mahjong = Card(special=Special.mahjong)
 
 ### For convenience reasons (especially testing) have an explicit instance of each card
 # ranks = map(str, range(2, 15))
 # colors = 'rgbk'
 # simple_card_strings = map(''.join, itertools.product(colors, ranks))
 
-dog = Card(special=Special.dog, rank=-2)
 r2 = tcard('r2')
 r3 = tcard('r3')
 r4 = tcard('r4')

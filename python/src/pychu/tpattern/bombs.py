@@ -1,8 +1,9 @@
 from typing import Set
 
 from pychu.tlogic.tcards import Card
-from pychu.tpattern.multiples import MultiRec
-from pychu.tpattern.tpatternrecognizer import TPatternRecognizer
+from pychu.tpattern.multiples import TMultiFinder
+from pychu.tpattern.tpatternfinder import TPatternFinder
+
 
 
 def find_bombs(cards):
@@ -23,11 +24,11 @@ def find_bombs(cards):
         lastCard = card
     return out
 
-class PBombs(TPatternRecognizer):
+class PBombs(TPatternFinder):
     def recognize(self, cards: Set[Card], phoenix=False) -> int:
         if not phoenix:
             return find_bombs(cards)
         else:
-            mr = MultiRec(4, phoenix)
+            mr = TMultiFinder(4, phoenix)
 
         pass

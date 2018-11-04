@@ -10,7 +10,7 @@
 import pytest
 from pytest import mark
 
-from pychu.tgame.server import CardsValidator
+from pychu.tgame.validator import CardsValidator
 from pychu.tlogic.tcards import tcards
 from pychu.tlogic.tcard_names import *
 
@@ -21,10 +21,9 @@ class TestTurnValidator:
     def deck(self):
         return generate_deck()
 
-    # todo:
     @mark.parametrize('table,played', [
         ({maj}, {k2, r2}),
-        ({phx}, {maj}),
+        ({Card(rank=1.5, special=Special.phoenix)}, {maj}),
         ({drn}, {phx}),
         ({k5,b5}, {r6}),
         ({k7, r7}, {r9, g9, b9})
@@ -45,11 +44,14 @@ class TestTurnValidator:
         :return:
         """
         validator = CardsValidator(table, deck)
-        validator.card_receiver(played)
-        assert not validator.valid_move
+        validator.verify(played)
+        assert not validator.played_cards
 
     @mark.parametrize('cards',[
-        tcards('k2 b2|g5 b5')
+        ('k2 b2|g5 b5'),
+        ('mah|phx'),
+        ('k14|phx'),
+
     ])
     def test_valid(self, cards, deck):
         """
@@ -58,11 +60,12 @@ class TestTurnValidator:
         :param cards:
         :return:
         """
-        table = cards[-2]
-        played = cards[-1]
+        tc = tcards(cards)
+        table = tc[0]
+        played = tc[1]
         validator = CardsValidator(table, deck)
-        validator.card_receiver(played)
-        assert validator.valid_move
+        validator.verify(played)
+        assert validator.played_cards
 
         @mark.parametrize('table,played,hand,wish,allowed', [
             ([b2,g2,k2],[k3, b3, g3], [k3, b3, g3, phoenix],3,True),
@@ -72,11 +75,14 @@ class TestTurnValidator:
         ])
         def test_wish_allowed(table,played,hand,wish,allowed):
             validator = CardsValidator(table,hand,wish)
-            validator.card_receiver()
+            validator.verify()
 
 
 
 class TestTurn:
+    """
+    Not sure if this is testable by a unit test...
+    """
 
     def test_win(self, cards):
         """
